@@ -10,7 +10,11 @@ import java.awt.*;
 
 public class Login {
     private JPanel panel1;
-    private JTree tree1;
+    private JTextField usernameField;
+    private JPasswordField passwordField;
+    private JButton loginButton;
+    private JButton forgotPasswordButton;
+    private JButton newUserRegisterHereButton;
 
 
     public static void LoginPane(String[] args) {
@@ -38,17 +42,95 @@ public class Login {
      */
     private void $$$setupUI$$$() {
         panel1 = new JPanel();
-        panel1.setLayout(new GridLayoutManager(1, 1, new Insets(0, 0, 0, 0), -1, -1));
-        final JPanel panel2 = new JPanel();
-        panel2.setLayout(new GridLayoutManager(2, 2, new Insets(0, 0, 0, 0), -1, -1));
-        panel1.add(panel2, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
-        panel2.setBorder(BorderFactory.createTitledBorder(null, "Test", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, null));
-        tree1 = new JTree();
-        panel2.add(tree1, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 50), null, 0, false));
+        panel1.setLayout(new GridLayoutManager(9, 5, new Insets(0, 0, 0, 0), -1, -1));
+        panel1.setBackground(new Color(-16777216));
+        Font panel1Font = this.$$$getFont$$$("Courier New", -1, -1, panel1.getFont());
+        if (panel1Font != null) panel1.setFont(panel1Font);
+        panel1.setForeground(new Color(-16711936));
+        panel1.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Login", TitledBorder.LEFT, TitledBorder.DEFAULT_POSITION, this.$$$getFont$$$("Courier New", -1, -1, panel1.getFont()), new Color(-16711936)));
+        final JLabel label1 = new JLabel();
+        label1.setBackground(new Color(-16777216));
+        Font label1Font = this.$$$getFont$$$("Courier New", Font.BOLD, 22, label1.getFont());
+        if (label1Font != null) label1.setFont(label1Font);
+        label1.setForeground(new Color(-16711936));
+        label1.setText("Welcome to Green Space Void!");
+        panel1.add(label1, new GridConstraints(0, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        usernameField = new JTextField();
+        usernameField.setBackground(new Color(-16777216));
+        usernameField.setCaretColor(new Color(-16711936));
+        usernameField.setForeground(new Color(-16711936));
+        panel1.add(usernameField, new GridConstraints(2, 2, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+        passwordField = new JPasswordField();
+        passwordField.setBackground(new Color(-16777216));
+        passwordField.setForeground(new Color(-16711936));
+        panel1.add(passwordField, new GridConstraints(4, 2, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+        final JLabel label2 = new JLabel();
+        label2.setBackground(new Color(-16777216));
+        Font label2Font = this.$$$getFont$$$("Courier New", -1, -1, label2.getFont());
+        if (label2Font != null) label2.setFont(label2Font);
+        label2.setForeground(new Color(-16711936));
+        label2.setText("Enter Email:");
+        panel1.add(label2, new GridConstraints(1, 2, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final Spacer spacer1 = new Spacer();
-        panel2.add(spacer1, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
+        panel1.add(spacer1, new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
         final Spacer spacer2 = new Spacer();
-        panel2.add(spacer2, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_VERTICAL, 1, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        panel1.add(spacer2, new GridConstraints(2, 4, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
+        final JLabel label3 = new JLabel();
+        label3.setBackground(new Color(-16777216));
+        Font label3Font = this.$$$getFont$$$("Courier New", -1, -1, label3.getFont());
+        if (label3Font != null) label3.setFont(label3Font);
+        label3.setForeground(new Color(-16711936));
+        label3.setText("Enter Password:");
+        panel1.add(label3, new GridConstraints(3, 2, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        loginButton = new JButton();
+        loginButton.setBackground(new Color(-16777216));
+        Font loginButtonFont = this.$$$getFont$$$("Courier New", -1, -1, loginButton.getFont());
+        if (loginButtonFont != null) loginButton.setFont(loginButtonFont);
+        loginButton.setForeground(new Color(-16711936));
+        loginButton.setLabel("Login!");
+        loginButton.setText("Login!");
+        panel1.add(loginButton, new GridConstraints(5, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        final Spacer spacer3 = new Spacer();
+        panel1.add(spacer3, new GridConstraints(8, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_VERTICAL, 1, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        forgotPasswordButton = new JButton();
+        forgotPasswordButton.setBackground(new Color(-16777216));
+        Font forgotPasswordButtonFont = this.$$$getFont$$$("Courier New", -1, -1, forgotPasswordButton.getFont());
+        if (forgotPasswordButtonFont != null) forgotPasswordButton.setFont(forgotPasswordButtonFont);
+        forgotPasswordButton.setForeground(new Color(-26880));
+        forgotPasswordButton.setLabel("Forgot Password?");
+        forgotPasswordButton.setText("Forgot Password?");
+        panel1.add(forgotPasswordButton, new GridConstraints(7, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        final Spacer spacer4 = new Spacer();
+        panel1.add(spacer4, new GridConstraints(4, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
+        final Spacer spacer5 = new Spacer();
+        panel1.add(spacer5, new GridConstraints(4, 3, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
+        newUserRegisterHereButton = new JButton();
+        newUserRegisterHereButton.setBackground(new Color(-16777216));
+        newUserRegisterHereButton.setBorderPainted(true);
+        Font newUserRegisterHereButtonFont = this.$$$getFont$$$("Courier New", -1, -1, newUserRegisterHereButton.getFont());
+        if (newUserRegisterHereButtonFont != null) newUserRegisterHereButton.setFont(newUserRegisterHereButtonFont);
+        newUserRegisterHereButton.setForeground(new Color(-16729159));
+        newUserRegisterHereButton.setText("New User? Register Here!");
+        panel1.add(newUserRegisterHereButton, new GridConstraints(6, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+    }
+
+    /**
+     * @noinspection ALL
+     */
+    private Font $$$getFont$$$(String fontName, int style, int size, Font currentFont) {
+        if (currentFont == null) return null;
+        String resultName;
+        if (fontName == null) {
+            resultName = currentFont.getName();
+        } else {
+            Font testFont = new Font(fontName, Font.PLAIN, 10);
+            if (testFont.canDisplay('a') && testFont.canDisplay('1')) {
+                resultName = fontName;
+            } else {
+                resultName = currentFont.getName();
+            }
+        }
+        return new Font(resultName, style >= 0 ? style : currentFont.getStyle(), size >= 0 ? size : currentFont.getSize());
     }
 
     /**
