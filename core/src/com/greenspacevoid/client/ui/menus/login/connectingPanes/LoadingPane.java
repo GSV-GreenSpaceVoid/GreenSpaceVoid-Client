@@ -1,4 +1,4 @@
-package com.greenspacevoid.client.ui.menus.login;
+package com.greenspacevoid.client.ui.menus.login.connectingPanes;
 
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
