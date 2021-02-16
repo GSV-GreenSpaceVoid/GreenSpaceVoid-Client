@@ -10,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class TargetingMenu {
+    private JFrame frame;
     private JPanel targetingPanel;
     private JTable weaponryTable;
     private JTable lockedTargetTable;
@@ -44,13 +45,20 @@ public class TargetingMenu {
         JFrame frame = new JFrame("Targeting Menu");
 
         TargetingMenu menu = new TargetingMenu();
-
+        menu.setFrame(frame);
         frame.setContentPane(menu.targetingPanel);
         frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
-
         return menu;
+    }
+
+    public JFrame getFrame() {
+        return frame;
+    }
+
+    public void setFrame(JFrame frame) {
+        this.frame = frame;
     }
 
     public JPanel getTargetingPanel() {

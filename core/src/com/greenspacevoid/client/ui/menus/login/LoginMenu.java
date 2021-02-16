@@ -7,8 +7,12 @@ import com.intellij.uiDesigner.core.Spacer;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.math.BigInteger;
+import java.security.MessageDigest;
 
-public class Login {
+public class LoginMenu {
     private JPanel panel1;
     private JTextField usernameField;
     private JPasswordField passwordField;
@@ -16,14 +20,54 @@ public class Login {
     private JButton forgotPasswordButton;
     private JButton newUserRegisterHereButton;
 
+    private static final int loginCooldownTimer = 3000; //In Milliseconds
+    int lastTimeSinceLoginAttempt = 0;
+    //Listeners
 
-    public static void LoginPane(String[] args) {
-        JFrame frame = new JFrame("Login");
-        frame.setContentPane(new Login().panel1);
+
+
+
+    public LoginMenu() {
+        loginButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(System.currentTimeMillis() - loginCooldownTimer > lastTimeSinceLoginAttempt) {
+                    String username = usernameField.getText();
+                    String password = new String(passwordField.getPassword());
+
+                    try {
+                        MessageDigest hasher = MessageDigest.getInstance("SHA-512");
+                        byte[] hashedUsername = hasher.digest(username.getBytes());
+                        byte[] hashedPassword = hasher.digest(password.getBytes());
+                    }catch(Exception ignored){
+                        System.out.println("Login Credentials Didn't Hash Correctly");
+                    }
+
+                    //Todo: Login via Kryo
+
+                }
+
+
+
+
+                //Todo: SHA hash and server implementation
+            }
+        });
+    }
+
+    public static void createLoginPane(String[] args) {
+        JFrame frame = new JFrame("Green Space Void: Login");
+        frame.setContentPane(new LoginMenu().panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
     }
+
+
+
+
+
+
 
 
     {
