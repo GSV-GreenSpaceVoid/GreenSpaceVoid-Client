@@ -68,7 +68,7 @@ public class LoginMenu {
     }
 
 
-    public static void createLoginPane(String[] args) {
+    public static void createLoginPane() {
         JFrame frame = new JFrame("Green Space Void: Login");
         frame.setContentPane(new LoginMenu().panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

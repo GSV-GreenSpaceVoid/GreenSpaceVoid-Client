@@ -2,6 +2,8 @@ package com.greenspacevoid.client.desktop;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
+import com.greenspacevoid.client.ui.UserInterface;
+import com.greenspacevoid.client.ui.menus.login.LoginMenu;
 import com.greenspacevoid.client.ui.menus.ui.main.TargetingMenu;
 import com.greenspacevoid.client.ui.renderer.GSVClient;
 
@@ -19,7 +21,8 @@ public class DesktopLauncher {
 		//TargetingMenu.createTargetingMenu();
 
 		//TargetingMenu menu = new TargetingMenu();
-
+		LoginMenu.createLoginPane();
+		UserInterface.generateUIComponents();
 
 
 

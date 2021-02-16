@@ -17,7 +17,7 @@ public class TargetingMenu {
     private JTextArea targetInfoPane;
     private JProgressBar targetShieldBar;
     private JProgressBar targetHullBar;
-    private JProgressBar progressBar3;
+    private JProgressBar targetStructureBar;
     private JButton openDroneMenuButton;
     private JButton toggleModuleOverdriveForButton;
     private JButton ceaseAllWeaponsFireButton;
@@ -86,7 +86,7 @@ public class TargetingMenu {
     }
 
     public JProgressBar getProgressBar3() {
-        return progressBar3;
+        return targetStructureBar;
     }
 
     public JButton getOpenDroneMenuButton() {
@@ -234,12 +234,12 @@ public class TargetingMenu {
         targetHullBar.setString("Hull: 0%");
         targetHullBar.setStringPainted(true);
         targetingPanel.add(targetHullBar, new GridConstraints(10, 2, 7, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        progressBar3 = new JProgressBar();
-        progressBar3.setIndeterminate(true);
-        progressBar3.setOrientation(1);
-        progressBar3.setString("Structure: 0%");
-        progressBar3.setStringPainted(true);
-        targetingPanel.add(progressBar3, new GridConstraints(10, 3, 7, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        targetStructureBar = new JProgressBar();
+        targetStructureBar.setIndeterminate(true);
+        targetStructureBar.setOrientation(1);
+        targetStructureBar.setString("Structure: 0%");
+        targetStructureBar.setStringPainted(true);
+        targetingPanel.add(targetStructureBar, new GridConstraints(10, 3, 7, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         objectsOfInterestTable = new JTable();
         targetingPanel.add(objectsOfInterestTable, new GridConstraints(1, 0, 1, 4, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 150), null, 0, false));
     }
