@@ -18,7 +18,7 @@ public class UserInterface {
     public static void generateUIComponents(){
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
-        }catch(Exception ignored){//Windows theme looks the best IMO
+        }catch(Exception ignored){//Windows theme looks the best IMO. However, this is not fixed.
 
 
 

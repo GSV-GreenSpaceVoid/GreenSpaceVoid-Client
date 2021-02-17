@@ -53,6 +53,7 @@ public class TargetingMenu {
         return menu;
     }
 
+
     public JFrame getFrame() {
         return frame;
     }
@@ -158,10 +159,8 @@ public class TargetingMenu {
         final JLabel label1 = new JLabel();
         label1.setText("Objects of Interest:");
         targetingPanel.add(label1, new GridConstraints(0, 0, 1, 4, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        weaponryTable = new JTable();
-        targetingPanel.add(weaponryTable, new GridConstraints(3, 0, 2, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 50), null, 0, false));
         lockedTargetTable = new JTable();
-        targetingPanel.add(lockedTargetTable, new GridConstraints(3, 1, 1, 3, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 100), null, 0, false));
+        targetingPanel.add(lockedTargetTable, new GridConstraints(3, 1, 1, 3, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 65), null, 0, false));
         final JLabel label2 = new JLabel();
         label2.setText("Offensive/Harvesting Devices:");
         targetingPanel.add(label2, new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
@@ -175,7 +174,7 @@ public class TargetingMenu {
         targetInfoPane.setLineWrap(true);
         targetInfoPane.setText("Target Info:");
         targetInfoPane.setWrapStyleWord(true);
-        targetingPanel.add(targetInfoPane, new GridConstraints(4, 1, 1, 3, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 100), null, 0, false));
+        targetingPanel.add(targetInfoPane, new GridConstraints(4, 1, 1, 3, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 65), null, 0, false));
         final JLabel label4 = new JLabel();
         label4.setText("Targeting Utilities:");
         targetingPanel.add(label4, new GridConstraints(5, 1, 1, 3, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
@@ -219,7 +218,7 @@ public class TargetingMenu {
         carrierMenuButton.setText("Carrier Menu");
         targetingPanel.add(carrierMenuButton, new GridConstraints(13, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         doomsdayDeviceMenuButton = new JButton();
-        doomsdayDeviceMenuButton.setText("Doomsday Device Menu");
+        doomsdayDeviceMenuButton.setText("Doomsday Device(s) Menu");
         targetingPanel.add(doomsdayDeviceMenuButton, new GridConstraints(14, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         targetShieldBar = new JProgressBar();
         targetShieldBar.setAutoscrolls(false);
@@ -242,6 +241,8 @@ public class TargetingMenu {
         targetingPanel.add(targetStructureBar, new GridConstraints(10, 3, 7, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         objectsOfInterestTable = new JTable();
         targetingPanel.add(objectsOfInterestTable, new GridConstraints(1, 0, 1, 4, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 150), null, 0, false));
+        weaponryTable = new JTable();
+        targetingPanel.add(weaponryTable, new GridConstraints(3, 0, 2, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 130), null, 0, false));
     }
 
     /**

@@ -4,14 +4,17 @@ import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 import com.greenspacevoid.client.ui.UserInterface;
 import com.greenspacevoid.client.ui.menus.login.LoginMenu;
+import com.greenspacevoid.client.ui.menus.ui.auxiliary.MarketMenu;
 import com.greenspacevoid.client.ui.menus.ui.main.TargetingMenu;
 import com.greenspacevoid.client.ui.renderer.GSVClient;
+import jdk.vm.ci.code.site.Mark;
 
 import javax.swing.*;
 import java.lang.annotation.Target;
 
 public class DesktopLauncher {
-	public static final String version = "1.0.0 ALPHA";//Todo: Always be sure to change this before you build.
+	//Previous Version 1.0.0
+	public static final String version = "1.0.0 ALPHA";//Todo: Always be sure to change this before you distribute.
 
 
 
@@ -21,8 +24,11 @@ public class DesktopLauncher {
 		//TargetingMenu.createTargetingMenu();
 
 		//TargetingMenu menu = new TargetingMenu();
-		LoginMenu.createLoginPane();
-		UserInterface.generateUIComponents();
+		//LoginMenu.createLoginPane();
+		//UserInterface.generateUIComponents();
+		MarketMenu.createMarketMenu();
+
+
 
 
 
