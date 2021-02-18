@@ -29,7 +29,22 @@ public class TargetingMenu {
     private JButton mobileIndustryAndManufacturingButton;
     private JButton shipScannersSurveyButton;
     private JButton viewCargoHoldButton;
-    private JTable objectsOfInterestTable;
+    private JTable shipsTargetTable;
+    private JScrollPane shipsScrollPane;
+    private JPanel navigationPanel;
+    private JPanel stationsPanel;
+    private JTable navigationTargetTable;
+    private JTable table2;
+    private JTable miningTargetsTable;
+    private JScrollPane stationScrollPane;
+    private JScrollPane miningScrollPane;
+    private JTabbedPane stationsTargetTable;
+    private JScrollPane navigationScrollPane;
+    private JTable allTargetsTable;
+    private JScrollPane allTargetsScrollpane;
+    private JPanel allTargetsPanel;
+    private JPanel shipsPanel;
+    private JPanel miningPanel;
 
 
     public TargetingMenu() {
@@ -135,7 +150,55 @@ public class TargetingMenu {
     }
 
     public JTable getObjectsOfInterestTable() {
-        return objectsOfInterestTable;
+        return shipsTargetTable;
+    }
+
+    public JProgressBar getTargetStructureBar() {
+        return targetStructureBar;
+    }
+
+    public JTable getShipsTargetTable() {
+        return shipsTargetTable;
+    }
+
+    public JScrollPane getShipsScrollPane() {
+        return shipsScrollPane;
+    }
+
+    public JPanel getNavigationPanel() {
+        return navigationPanel;
+    }
+
+    public JPanel getStationsPanel() {
+        return stationsPanel;
+    }
+
+    public JTable getNavigationTargetTable() {
+        return navigationTargetTable;
+    }
+
+    public JTable getTable2() {
+        return table2;
+    }
+
+    public JTable getMiningTargetsTable() {
+        return miningTargetsTable;
+    }
+
+    public JScrollPane getStationScrollPane() {
+        return stationScrollPane;
+    }
+
+    public JScrollPane getMiningScrollPane() {
+        return miningScrollPane;
+    }
+
+    public JTabbedPane getStationsTargetTable() {
+        return stationsTargetTable;
+    }
+
+    public JScrollPane getNavigationScrollPane() {
+        return navigationScrollPane;
     }
 
     {
@@ -239,8 +302,8 @@ public class TargetingMenu {
         targetStructureBar.setString("Structure: 0%");
         targetStructureBar.setStringPainted(true);
         targetingPanel.add(targetStructureBar, new GridConstraints(10, 3, 7, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        objectsOfInterestTable = new JTable();
-        targetingPanel.add(objectsOfInterestTable, new GridConstraints(1, 0, 1, 4, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 150), null, 0, false));
+        shipsTargetTable = new JTable();
+        targetingPanel.add(shipsTargetTable, new GridConstraints(1, 0, 1, 4, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 150), null, 0, false));
         weaponryTable = new JTable();
         targetingPanel.add(weaponryTable, new GridConstraints(3, 0, 2, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 130), null, 0, false));
     }
