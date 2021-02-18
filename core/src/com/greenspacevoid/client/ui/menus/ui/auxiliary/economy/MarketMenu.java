@@ -1,4 +1,4 @@
-package com.greenspacevoid.client.ui.menus.ui.auxiliary;
+package com.greenspacevoid.client.ui.menus.ui.auxiliary.economy;
 
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;

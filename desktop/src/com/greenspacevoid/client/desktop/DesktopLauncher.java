@@ -2,15 +2,8 @@ package com.greenspacevoid.client.desktop;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
-import com.greenspacevoid.client.ui.UserInterface;
-import com.greenspacevoid.client.ui.menus.login.LoginMenu;
-import com.greenspacevoid.client.ui.menus.ui.auxiliary.MarketMenu;
-import com.greenspacevoid.client.ui.menus.ui.main.TargetingMenu;
+import com.greenspacevoid.client.ui.menus.ui.auxiliary.economy.MarketMenu;
 import com.greenspacevoid.client.ui.renderer.GSVClient;
-
-
-import javax.swing.*;
-import java.lang.annotation.Target;
 
 public class DesktopLauncher {
 	//Previous Version 1.0.0
