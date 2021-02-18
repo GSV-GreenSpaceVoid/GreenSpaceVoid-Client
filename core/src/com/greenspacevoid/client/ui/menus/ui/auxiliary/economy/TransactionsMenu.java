@@ -43,23 +43,47 @@ public class TransactionsMenu {
         tabbedPane1 = new JTabbedPane();
         masterPanel.add(tabbedPane1, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, new Dimension(200, 200), null, 0, false));
         financeReportPanel = new JPanel();
-        financeReportPanel.setLayout(new GridLayoutManager(1, 2, new Insets(0, 0, 0, 0), -1, -1));
+        financeReportPanel.setLayout(new GridLayoutManager(6, 2, new Insets(0, 0, 0, 0), -1, -1));
         tabbedPane1.addTab("Finance Report", financeReportPanel);
         profitMarginDisplay = new JSlider();
+        profitMarginDisplay.setEnabled(false);
+        profitMarginDisplay.setFocusable(false);
+        profitMarginDisplay.setMajorTickSpacing(50);
         profitMarginDisplay.setOrientation(1);
-        profitMarginDisplay.setPaintLabels(true);
+        profitMarginDisplay.setPaintLabels(false);
         profitMarginDisplay.setPaintTicks(true);
-        financeReportPanel.add(profitMarginDisplay, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        final Spacer spacer1 = new Spacer();
-        financeReportPanel.add(spacer1, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
+        profitMarginDisplay.setPaintTrack(false);
+        profitMarginDisplay.setValueIsAdjusting(false);
+        financeReportPanel.add(profitMarginDisplay, new GridConstraints(4, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        defecitLabel = new JLabel();
+        defecitLabel.setForeground(new Color(-65536));
+        defecitLabel.setText("Defecit: $1,234,567");
+        financeReportPanel.add(defecitLabel, new GridConstraints(5, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        proftMarginLabel = new JLabel();
+        proftMarginLabel.setForeground(new Color(-16711936));
+        proftMarginLabel.setText("Profit: $1,234,567");
+        financeReportPanel.add(proftMarginLabel, new GridConstraints(1, 0, 3, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        timeScaleSelectionBox = new JComboBox();
+        financeReportPanel.add(timeScaleSelectionBox, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        statisticOverPastAmountOfTimeLabel = new JLabel();
+        statisticOverPastAmountOfTimeLabel.setText("Statistics for the past x amount of time");
+        financeReportPanel.add(statisticOverPastAmountOfTimeLabel, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        currentBalance$1234TextPane = new JTextPane();
+        currentBalance$1234TextPane.setText("Current Balance: $1,234,567\n\nCurrent Income over (past x time): $1,234,567\nCurrent Expenditure over (part x time): $1,234,567\n\nTaxes (Over past x time): $1,234,567\n\nNet Income (over past x time): $1,234,567\n");
+        financeReportPanel.add(currentBalance$1234TextPane, new GridConstraints(4, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 50), null, 0, false));
+        netIncomeLabel = new JLabel();
+        netIncomeLabel.setText("Net Income: $1,234,567");
+        financeReportPanel.add(netIncomeLabel, new GridConstraints(5, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         transactionsPanel = new JPanel();
-        transactionsPanel.setLayout(new GridLayoutManager(1, 1, new Insets(0, 0, 0, 0), -1, -1));
+        transactionsPanel.setLayout(new GridLayoutManager(2, 1, new Insets(0, 0, 0, 0), -1, -1));
         tabbedPane1.addTab("Transactions", transactionsPanel);
         transactionPanelScrollPane = new JScrollPane();
         transactionPanelScrollPane.setVerticalScrollBarPolicy(22);
         transactionsPanel.add(transactionPanelScrollPane, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         transactionTable = new JTable();
         transactionPanelScrollPane.setViewportView(transactionTable);
+        transactionsInfoPane = new JTextPane();
+        transactionsPanel.add(transactionsInfoPane, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 50), null, 0, false));
     }
 
     /**
@@ -68,4 +92,5 @@ public class TransactionsMenu {
     public JComponent $$$getRootComponent$$$() {
         return masterPanel;
     }
+
 }
