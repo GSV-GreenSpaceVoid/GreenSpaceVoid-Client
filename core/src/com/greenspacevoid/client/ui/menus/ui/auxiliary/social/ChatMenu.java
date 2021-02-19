@@ -43,7 +43,7 @@ public class ChatMenu {
         //Specify channel, message, and sender B) Listener on the client listens for enter keystrokes to send a message.
 
 
-        
+
 
 
 

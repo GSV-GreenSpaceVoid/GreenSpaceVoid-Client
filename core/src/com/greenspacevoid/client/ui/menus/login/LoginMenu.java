@@ -1,6 +1,10 @@
 package com.greenspacevoid.client.ui.menus.login;
 
 import com.greenspacevoid.client.misc.URLs;
+import com.greenspacevoid.server.ClientSide;
+import com.greenspacevoid.server.network.Networking;
+import com.greenspacevoid.server.network.messages.SharedMessage;
+import com.greenspacevoid.server.network.messages.login.transmit.LoginMessage;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.Spacer;
@@ -10,7 +14,6 @@ import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.math.BigInteger;
 import java.net.URI;
 import java.security.MessageDigest;
 
@@ -36,7 +39,7 @@ public class LoginMenu {
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                processCredentials();
+                login();
             }
         });
 
@@ -77,20 +80,32 @@ public class LoginMenu {
     }
 
 
-    public void processCredentials() {//Executed when login button is pressed.
+    public void login() {//Executed when login button is pressed.
         if (System.currentTimeMillis() - loginCooldownTimer > lastTimeSinceLoginAttempt) {
             String username = usernameField.getText();
             String password = new String(passwordField.getPassword());
-
+            byte[] hashedPassword;
             try {
                 MessageDigest hasher = MessageDigest.getInstance("SHA-512");
-                byte[] hashedPassword = hasher.digest(password.getBytes());
+                 hashedPassword = hasher.digest(password.getBytes());
             } catch (Exception ignored) {
                 System.out.println("Login Credentials Didn't Hash Correctly");
+                return;
             }
 
-            //Todo: Login via Kryo
-            //Todo: SHA hash and server implementation
+            try {
+                Networking.clientSide = new ClientSide();
+                Networking.clientSide.connectToServer();
+            }catch(Exception e){
+
+            }
+            LoginMessage loginMessage = new LoginMessage();
+            loginMessage.username = username;
+            loginMessage.password = hashedPassword;
+            Networking.clientSide.sendMessage(loginMessage);
+
+
+            
         }
 
     }
