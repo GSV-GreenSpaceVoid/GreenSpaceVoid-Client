@@ -5,6 +5,7 @@ import com.intellij.uiDesigner.core.GridLayoutManager;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class ChatMenu {
 
@@ -14,6 +15,46 @@ public class ChatMenu {
     private JPanel chatMenuPanel;
     private JTabbedPane tabbedPane1;
     private JPanel localChannelPanel;
+    private JTextArea chatTextArea;
+    private JList userInChannelList;
+    private JScrollPane chatWindowScrollpane;
+    private JLabel channelDescriptionLabel;
+    private JLabel usersInChannelLabel;
+    private JTextField messageTextField;
+    private JButton sendButton;
+    private JScrollPane userListScrollpane;
+
+
+
+
+
+
+    public void addChatRoom(/*Mystery data in here B) */){
+
+        //Todo: On connect, add the player's personal chat rooms to their client. B)
+
+
+
+
+    }
+
+    public void updateChat(String channelID, String message, String username){
+
+        //Specify channel, message, and sender B) Listener on the client listens for enter keystrokes to send a message.
+
+
+        
+
+
+
+
+    }
+
+
+
+
+
+
 
 
     {

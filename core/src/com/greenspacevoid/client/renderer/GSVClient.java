@@ -1,4 +1,4 @@
-package com.greenspacevoid.client.ui.renderer;
+package com.greenspacevoid.client.renderer;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.graphics.Texture;

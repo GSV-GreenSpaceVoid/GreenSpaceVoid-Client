@@ -3,7 +3,7 @@ package com.greenspacevoid.client.desktop;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 import com.greenspacevoid.client.ui.menus.ui.auxiliary.economy.MarketMenu;
-import com.greenspacevoid.client.ui.renderer.GSVClient;
+import com.greenspacevoid.client.renderer.GSVClient;
 
 public class DesktopLauncher {
 	//Previous Version 1.0.0
