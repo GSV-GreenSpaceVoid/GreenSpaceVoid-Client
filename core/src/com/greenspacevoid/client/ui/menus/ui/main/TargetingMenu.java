@@ -13,7 +13,7 @@ public class TargetingMenu {
     private JFrame frame;
     private JPanel targetingPanel;
     private JTable weaponryTable;
-    private JTable lockedTargetTable;
+    private JTable lockedOnTargetTable;
     private JTextArea targetInfoPane;
     private JProgressBar targetShieldBar;
     private JProgressBar targetHullBar;
@@ -34,17 +34,22 @@ public class TargetingMenu {
     private JPanel navigationPanel;
     private JPanel stationsPanel;
     private JTable navigationTargetTable;
-    private JTable table2;
+    private JTable stationTargetTable;
     private JTable miningTargetsTable;
     private JScrollPane stationScrollPane;
     private JScrollPane miningScrollPane;
-    private JTabbedPane stationsTargetTable;
-    private JScrollPane navigationScrollPane;
+    private JTabbedPane availableTargetsTabbedPane;
+    private JTable shipTargetTable;
+    private JTable miningTargetTable;
     private JTable allTargetsTable;
-    private JScrollPane allTargetsScrollpane;
-    private JPanel allTargetsPanel;
-    private JPanel shipsPanel;
-    private JPanel miningPanel;
+    private JScrollPane stationTargetScrollpane;
+    private JScrollPane navigationTargetsScrollpane;
+    private JScrollPane allTargetsScrollPane;
+    private JScrollPane miningTargetScrollpane;
+    private JScrollPane weaponryScrollpane;
+    private JScrollPane lockedOnTargetsScrollpane;
+    private JTextArea textArea1;
+    private JScrollPane navigationScrollPane;
 
 
     public TargetingMenu() {
@@ -86,7 +91,7 @@ public class TargetingMenu {
     }
 
     public JTable getLockedTargetTable() {
-        return lockedTargetTable;
+        return lockedOnTargetTable;
     }
 
     public JTextArea getTargetInfoPane() {
@@ -178,7 +183,7 @@ public class TargetingMenu {
     }
 
     public JTable getTable2() {
-        return table2;
+        return stationTargetTable;
     }
 
     public JTable getMiningTargetsTable() {
@@ -194,7 +199,7 @@ public class TargetingMenu {
     }
 
     public JTabbedPane getStationsTargetTable() {
-        return stationsTargetTable;
+        return availableTargetsTabbedPane;
     }
 
     public JScrollPane getNavigationScrollPane() {
@@ -219,8 +224,8 @@ public class TargetingMenu {
         targetingPanel = new JPanel();
         targetingPanel.setLayout(new GridLayoutManager(16, 4, new Insets(0, 0, 0, 0), -1, -1));
         targetingPanel.setBorder(BorderFactory.createTitledBorder(null, "Targeting Panel", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, null));
-        lockedTargetTable = new JTable();
-        targetingPanel.add(lockedTargetTable, new GridConstraints(2, 1, 1, 3, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 65), null, 0, false));
+        lockedOnTargetTable = new JTable();
+        targetingPanel.add(lockedOnTargetTable, new GridConstraints(2, 1, 1, 3, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 65), null, 0, false));
         final JLabel label1 = new JLabel();
         label1.setText("Offensive/Harvesting Devices:");
         targetingPanel.add(label1, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
@@ -299,11 +304,11 @@ public class TargetingMenu {
         targetStructureBar.setString("Structure: 0%");
         targetStructureBar.setStringPainted(true);
         targetingPanel.add(targetStructureBar, new GridConstraints(9, 3, 7, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        stationsTargetTable = new JTabbedPane();
-        targetingPanel.add(stationsTargetTable, new GridConstraints(0, 0, 1, 4, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, new Dimension(200, 200), null, 0, false));
+        availableTargetsTabbedPane = new JTabbedPane();
+        targetingPanel.add(availableTargetsTabbedPane, new GridConstraints(0, 0, 1, 4, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, new Dimension(200, 200), null, 0, false));
         shipsPanel = new JPanel();
         shipsPanel.setLayout(new GridLayoutManager(1, 1, new Insets(0, 0, 0, 0), -1, -1));
-        stationsTargetTable.addTab("Ships", shipsPanel);
+        availableTargetsTabbedPane.addTab("Ships", shipsPanel);
         shipsScrollPane = new JScrollPane();
         shipsScrollPane.setVerticalScrollBarPolicy(22);
         shipsPanel.add(shipsScrollPane, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
@@ -311,15 +316,15 @@ public class TargetingMenu {
         shipsScrollPane.setViewportView(shipsTargetTable);
         stationsPanel = new JPanel();
         stationsPanel.setLayout(new GridLayoutManager(1, 1, new Insets(0, 0, 0, 0), -1, -1));
-        stationsTargetTable.addTab("Stations", stationsPanel);
+        availableTargetsTabbedPane.addTab("Stations", stationsPanel);
         stationScrollPane = new JScrollPane();
         stationScrollPane.setVerticalScrollBarPolicy(22);
         stationsPanel.add(stationScrollPane, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
-        table2 = new JTable();
-        stationScrollPane.setViewportView(table2);
+        stationTargetTable = new JTable();
+        stationScrollPane.setViewportView(stationTargetTable);
         miningPanel = new JPanel();
         miningPanel.setLayout(new GridLayoutManager(1, 1, new Insets(0, 0, 0, 0), -1, -1));
-        stationsTargetTable.addTab("Mining", miningPanel);
+        availableTargetsTabbedPane.addTab("Mining", miningPanel);
         miningScrollPane = new JScrollPane();
         miningScrollPane.setVerticalScrollBarPolicy(22);
         miningPanel.add(miningScrollPane, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
@@ -327,7 +332,7 @@ public class TargetingMenu {
         miningScrollPane.setViewportView(miningTargetsTable);
         navigationPanel = new JPanel();
         navigationPanel.setLayout(new GridLayoutManager(1, 1, new Insets(0, 0, 0, 0), -1, -1));
-        stationsTargetTable.addTab("Navigation", navigationPanel);
+        availableTargetsTabbedPane.addTab("Navigation", navigationPanel);
         navigationScrollPane = new JScrollPane();
         navigationScrollPane.setVerticalScrollBarPolicy(22);
         navigationPanel.add(navigationScrollPane, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
@@ -335,7 +340,7 @@ public class TargetingMenu {
         navigationScrollPane.setViewportView(navigationTargetTable);
         allTargetsPanel = new JPanel();
         allTargetsPanel.setLayout(new GridLayoutManager(1, 1, new Insets(0, 0, 0, 0), -1, -1));
-        stationsTargetTable.addTab("All", allTargetsPanel);
+        availableTargetsTabbedPane.addTab("All", allTargetsPanel);
         allTargetsScrollpane = new JScrollPane();
         allTargetsScrollpane.setVerticalScrollBarPolicy(22);
         allTargetsPanel.add(allTargetsScrollpane, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
