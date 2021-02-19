@@ -223,7 +223,9 @@
             <constraints>
               <tabbedpane title="Ships"/>
             </constraints>
-            <properties/>
+            <properties>
+              <verticalScrollBarPolicy value="22"/>
+            </properties>
             <border type="none"/>
             <children>
               <component id="687db" class="javax.swing.JTable" binding="shipTargetTable">
@@ -236,7 +238,9 @@
             <constraints>
               <tabbedpane title="Navigation"/>
             </constraints>
-            <properties/>
+            <properties>
+              <verticalScrollBarPolicy value="22"/>
+            </properties>
             <border type="none"/>
             <children>
               <component id="77991" class="javax.swing.JTable" binding="navigationTargetTable">
@@ -249,7 +253,9 @@
             <constraints>
               <tabbedpane title="Mining"/>
             </constraints>
-            <properties/>
+            <properties>
+              <verticalScrollBarPolicy value="22"/>
+            </properties>
             <border type="none"/>
             <children>
               <component id="4b908" class="javax.swing.JTable" binding="miningTargetTable">
@@ -262,7 +268,9 @@
             <constraints>
               <tabbedpane title="Stations"/>
             </constraints>
-            <properties/>
+            <properties>
+              <verticalScrollBarPolicy value="22"/>
+            </properties>
             <border type="none"/>
             <children>
               <component id="e13a0" class="javax.swing.JTable" binding="stationTargetTable">
@@ -275,7 +283,9 @@
             <constraints>
               <tabbedpane title="All"/>
             </constraints>
-            <properties/>
+            <properties>
+              <verticalScrollBarPolicy value="22"/>
+            </properties>
             <border type="none"/>
             <children>
               <component id="18521" class="javax.swing.JTable" binding="allTargetsTable">
@@ -312,13 +322,15 @@
           </component>
         </children>
       </scrollpane>
-      <component id="e836a" class="javax.swing.JTextArea" binding="textArea1" default-binding="true">
+      <component id="e836a" class="javax.swing.JTextArea" binding="shipInfoTextArea">
         <constraints>
           <grid row="6" column="0" row-span="1" col-span="4" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="50"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <editable value="false"/>
+        </properties>
       </component>
     </children>
   </grid>

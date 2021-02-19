@@ -30,6 +30,7 @@ public class MarketMenu {
     private JScrollPane buyOrdersScrollPane;
     private JScrollPane sellOrdersScrollPane;
     private JScrollPane priceHistoryScrollPane;
+    private JComboBox comboBox1;
 
 
     public static void createMarketMenu() {

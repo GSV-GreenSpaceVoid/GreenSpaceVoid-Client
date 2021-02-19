@@ -5,6 +5,7 @@ import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.Spacer;
 
 import javax.swing.*;
+import javax.swing.border.TitledBorder;
 import java.awt.*;
 
 public class ShipInfoPanel {
@@ -43,26 +44,13 @@ public class ShipInfoPanel {
     private void $$$setupUI$$$() {
         shipInfoPane = new JPanel();
         shipInfoPane.setLayout(new GridLayoutManager(3, 6, new Insets(0, 0, 0, 0), -1, -1));
-        moduleTree = new JTree();
-        shipInfoPane.add(moduleTree, new GridConstraints(1, 5, 2, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 50), null, 0, false));
-        hullBar = new JProgressBar();
-        hullBar.setOrientation(1);
-        shipInfoPane.add(hullBar, new GridConstraints(1, 3, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        structureBar = new JProgressBar();
-        structureBar.setOrientation(1);
-        shipInfoPane.add(structureBar, new GridConstraints(1, 4, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        speedBar = new JProgressBar();
-        shipInfoPane.add(speedBar, new GridConstraints(2, 2, 1, 3, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        capacitorBar = new JProgressBar();
-        shipInfoPane.add(capacitorBar, new GridConstraints(0, 2, 1, 3, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        final JScrollPane scrollPane1 = new JScrollPane();
-        scrollPane1.setVerticalScrollBarPolicy(22);
-        shipInfoPane.add(scrollPane1, new GridConstraints(1, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, 1, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        shipInfoPane.setMinimumSize(new Dimension(600, 208));
+        shipInfoPane.setPreferredSize(new Dimension(1000, 208));
+        logScrollPane = new JScrollPane();
+        logScrollPane.setVerticalScrollBarPolicy(22);
+        shipInfoPane.add(logScrollPane, new GridConstraints(1, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         logTextPane = new JTextPane();
-        scrollPane1.setViewportView(logTextPane);
-        clearLogButton = new JButton();
-        clearLogButton.setText("Clear");
-        shipInfoPane.add(clearLogButton, new GridConstraints(2, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        logScrollPane.setViewportView(logTextPane);
         final Spacer spacer1 = new Spacer();
         shipInfoPane.add(spacer1, new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
         final JLabel label1 = new JLabel();
@@ -71,9 +59,59 @@ public class ShipInfoPanel {
         final JLabel label2 = new JLabel();
         label2.setText("Modules:");
         shipInfoPane.add(label2, new GridConstraints(0, 5, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        statusPanel = new JPanel();
+        statusPanel.setLayout(new GridLayoutManager(3, 3, new Insets(0, 0, 0, 0), -1, -1));
+        shipInfoPane.add(statusPanel, new GridConstraints(0, 4, 3, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
+        hullBar = new JProgressBar();
+        hullBar.setOrientation(1);
+        hullBar.setString("Hull: %/%");
+        hullBar.setStringPainted(true);
+        statusPanel.add(hullBar, new GridConstraints(2, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         shieldBar = new JProgressBar();
+        shieldBar.setForeground(new Color(-16731137));
         shieldBar.setOrientation(1);
-        shipInfoPane.add(shieldBar, new GridConstraints(1, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        shieldBar.setString("Shields: %/%");
+        shieldBar.setStringPainted(true);
+        shieldBar.setValue(50);
+        statusPanel.add(shieldBar, new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        structureBar = new JProgressBar();
+        structureBar.setOrientation(1);
+        structureBar.setString("Structure: %/%");
+        structureBar.setStringPainted(true);
+        statusPanel.add(structureBar, new GridConstraints(2, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        speedBar = new JProgressBar();
+        speedBar.setString("Speed: x m/s or AUs");
+        speedBar.setStringPainted(true);
+        statusPanel.add(speedBar, new GridConstraints(0, 0, 1, 3, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        capacitorBar = new JProgressBar();
+        capacitorBar.setString("Capacitor: %/%");
+        capacitorBar.setStringPainted(true);
+        statusPanel.add(capacitorBar, new GridConstraints(1, 0, 1, 3, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        moduleScrollPane = new JScrollPane();
+        shipInfoPane.add(moduleScrollPane, new GridConstraints(1, 5, 2, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        moduleTree = new JTree();
+        moduleScrollPane.setViewportView(moduleTree);
+        clearLogButton = new JButton();
+        clearLogButton.setText("Clear");
+        shipInfoPane.add(clearLogButton, new GridConstraints(2, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        cancelMovementButton = new JButton();
+        cancelMovementButton.setText("Cancel Movement");
+        shipInfoPane.add(cancelMovementButton, new GridConstraints(2, 3, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        final Spacer spacer2 = new Spacer();
+        shipInfoPane.add(spacer2, new GridConstraints(2, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
+        buffsPanel = new JPanel();
+        buffsPanel.setLayout(new GridLayoutManager(1, 1, new Insets(0, 0, 0, 0), -1, -1));
+        shipInfoPane.add(buffsPanel, new GridConstraints(1, 2, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, new Dimension(50, -1), null, 0, false));
+        buffsScrollpane = new JScrollPane();
+        buffsPanel.add(buffsScrollpane, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        buffsScrollpane.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLoweredBevelBorder(), "Buffs/Debuffs", TitledBorder.LEFT, TitledBorder.DEFAULT_POSITION, null, null));
+        buffTable = new JTable();
+        buffsScrollpane.setViewportView(buffTable);
+        currentActionLabel = new JLabel();
+        currentActionLabel.setText("Current Action:");
+        shipInfoPane.add(currentActionLabel, new GridConstraints(0, 3, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        final Spacer spacer3 = new Spacer();
+        shipInfoPane.add(spacer3, new GridConstraints(0, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
     }
 
     /**
@@ -82,4 +120,5 @@ public class ShipInfoPanel {
     public JComponent $$$getRootComponent$$$() {
         return shipInfoPane;
     }
+
 }
