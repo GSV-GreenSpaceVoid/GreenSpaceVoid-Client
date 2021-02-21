@@ -1,11 +1,12 @@
 package com.greenspacevoid.server.network.messages.entity;
 
-public class Entity {
+public class NetworkedEntityData {
     //NOT A MESSAGE. DATATYPE!
     AllRenderableEntities model;
     String playerName;
     int index;
-    double x,y,direction;
+    boolean isRendered;
+    double x,y,direction, distance;
 
 
 
