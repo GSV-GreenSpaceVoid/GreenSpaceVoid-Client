@@ -3,6 +3,9 @@ package com.greenspacevoid.server.network.messages.entity;
 import com.greenspacevoid.server.network.messages.SharedMessage;
 
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.TimeZone;
+import java.util.Timer;
 
 public class NetworkedEntity{//Object Class. Data networking classes are nested in this file.
 
@@ -54,18 +57,15 @@ public class NetworkedEntity{//Object Class. Data networking classes are nested 
             super();
 
         }
-
-
     }
 
-
-
-
-
-
-
-
-
+    
+    public static class CLIENT_SEND_RequestRefreshMessage extends SharedMessage{
+        Date date = new Date();
+        public CLIENT_SEND_RequestRefreshMessage(){
+            super();
+        }
+    }
 
 
 

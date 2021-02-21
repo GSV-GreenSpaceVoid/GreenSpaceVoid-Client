@@ -3,8 +3,7 @@ package com.greenspacevoid.client.ui.menus.login;
 import com.greenspacevoid.client.misc.URLs;
 import com.greenspacevoid.server.ClientSide;
 import com.greenspacevoid.server.network.Networking;
-import com.greenspacevoid.server.network.messages.SharedMessage;
-import com.greenspacevoid.server.network.messages.login.transmit.LoginMessage;
+import com.greenspacevoid.server.network.messages.login.NetworkedLogin;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.Spacer;
@@ -99,7 +98,7 @@ public class LoginMenu {
             } catch (Exception e) {
 
             }
-            LoginMessage loginMessage = new LoginMessage();
+            NetworkedLogin.CLIENT_SEND_LoginMessage loginMessage = new NetworkedLogin.CLIENT_SEND_LoginMessage();
             loginMessage.username = username;
             loginMessage.password = hashedPassword;
             Networking.clientSide.sendMessage(loginMessage);
