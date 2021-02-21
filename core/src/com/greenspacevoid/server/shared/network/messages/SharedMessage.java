@@ -1,4 +1,4 @@
-package com.greenspacevoid.server.network.messages;
+package com.greenspacevoid.server.shared.network.messages;
 
 
 

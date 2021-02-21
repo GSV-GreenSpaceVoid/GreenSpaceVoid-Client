@@ -1,4 +1,4 @@
-package com.greenspacevoid.server.network;
+package com.greenspacevoid.server.shared.network;
 
 import com.esotericsoftware.kryo.Kryo;
 import com.greenspacevoid.server.ClientSide;

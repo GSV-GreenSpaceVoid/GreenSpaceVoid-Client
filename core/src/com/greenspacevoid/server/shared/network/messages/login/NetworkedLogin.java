@@ -1,6 +1,6 @@
-package com.greenspacevoid.server.network.messages.login;
+package com.greenspacevoid.server.shared.network.messages.login;
 
-import com.greenspacevoid.server.network.messages.SharedMessage;
+import com.greenspacevoid.server.shared.network.messages.SharedMessage;
 
 public class NetworkedLogin {
     //Stub class...Might be good for something.

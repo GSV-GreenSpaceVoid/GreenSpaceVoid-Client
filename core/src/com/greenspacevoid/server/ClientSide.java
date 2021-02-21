@@ -1,12 +1,10 @@
 package com.greenspacevoid.server;
 
 import com.esotericsoftware.kryonet.Client;
-import com.esotericsoftware.kryonet.Server;
-import com.greenspacevoid.server.network.Networking;
-import com.greenspacevoid.server.network.messages.SharedMessage;
+import com.greenspacevoid.server.shared.network.Networking;
+import com.greenspacevoid.server.shared.network.messages.SharedMessage;
 
 import java.io.IOException;
-import java.net.URI;
 
 public class ClientSide {
 

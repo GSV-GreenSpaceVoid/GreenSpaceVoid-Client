@@ -1,4 +1,4 @@
-package com.greenspacevoid.server.network.messages.entity;
+package com.greenspacevoid.server.shared.renderer;
 
 public enum AllRenderableEntities {
 
