@@ -1,7 +1,7 @@
 package com.greenspacevoid.server.network.messages;
 
 
-import java.time.*;
+
 
 public abstract class SharedMessage {
 
@@ -9,7 +9,7 @@ public abstract class SharedMessage {
      * This value is used for debugging purposes only at the moment.
      * It is instantiated in the {@code SharedMessage} constructor.
      */
-    String timeSent;
+    //String timeSent;
 
     /**
      * This value is used for debugging purposed only at the moment.
@@ -18,14 +18,15 @@ public abstract class SharedMessage {
      * @implNote the {@code received()} method must be called when
      * the message is parsed by an {@link EndPoint}
      */
-    String timeReceived;
+    //String timeReceived;
 
     /**
      * Instantiates a new {@code SharedMessage} object and sets the
      * {@code timeSent} variable.
      */
     public SharedMessage(){
-        timeSent = Instant.now().toString();
+
+        //timeSent = Instant.now().toString();
     }
 
     /**
@@ -33,7 +34,8 @@ public abstract class SharedMessage {
      * an {@link EndPoint}
      */
     public void received(){
-        timeReceived = Instant.now().toString();
+
+        //timeReceived = Instant.now().toString();
     }
 }
 

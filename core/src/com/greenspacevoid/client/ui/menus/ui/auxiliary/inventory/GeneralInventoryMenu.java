@@ -43,6 +43,7 @@ public class GeneralInventoryMenu {
     public JComponent $$$getRootComponent$$$() {
         return panel1;
     }
+
     //Generic cargo container / wreckage / salvage container hold menu. Can be collected into or deposited fro.
 
 

@@ -93,13 +93,15 @@ public class MarketMenu {
         buyOrderstTable = new JTable();
         buyOrdersScrollPane.setViewportView(buyOrderstTable);
         priceHistoryPanel = new JPanel();
-        priceHistoryPanel.setLayout(new GridLayoutManager(1, 1, new Insets(0, 0, 0, 0), -1, -1));
+        priceHistoryPanel.setLayout(new GridLayoutManager(2, 2, new Insets(0, 0, 0, 0), -1, -1));
         tabbedPane1.addTab("Price History", priceHistoryPanel);
         priceHistoryScrollPane = new JScrollPane();
         priceHistoryScrollPane.setVerticalScrollBarPolicy(22);
-        priceHistoryPanel.add(priceHistoryScrollPane, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        priceHistoryPanel.add(priceHistoryScrollPane, new GridConstraints(1, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         priceHistoryTable = new JTable();
         priceHistoryScrollPane.setViewportView(priceHistoryTable);
+        comboBox1 = new JComboBox();
+        priceHistoryPanel.add(comboBox1, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         browserScrollPane = new JScrollPane();
         browserScrollPane.setHorizontalScrollBarPolicy(31);
         browserScrollPane.setVerticalScrollBarPolicy(21);

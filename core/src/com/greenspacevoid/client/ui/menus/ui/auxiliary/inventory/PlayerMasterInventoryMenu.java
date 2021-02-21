@@ -45,5 +45,6 @@ public class PlayerMasterInventoryMenu {
     public JComponent $$$getRootComponent$$$() {
         return panel1;
     }
+
     //Shows various ship holds and spaces
 }

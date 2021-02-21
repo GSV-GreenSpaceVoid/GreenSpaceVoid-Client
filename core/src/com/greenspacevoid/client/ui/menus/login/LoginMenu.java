@@ -87,7 +87,7 @@ public class LoginMenu {
             byte[] hashedPassword;
             try {
                 MessageDigest hasher = MessageDigest.getInstance("SHA-512");
-                 hashedPassword = hasher.digest(password.getBytes());
+                hashedPassword = hasher.digest(password.getBytes());
             } catch (Exception ignored) {
                 System.out.println("Login Credentials Didn't Hash Correctly");
                 return;
@@ -96,7 +96,7 @@ public class LoginMenu {
             try {
                 Networking.clientSide = new ClientSide();
                 Networking.clientSide.connectToServer();
-            }catch(Exception e){
+            } catch (Exception e) {
 
             }
             LoginMessage loginMessage = new LoginMessage();
@@ -105,7 +105,6 @@ public class LoginMenu {
             Networking.clientSide.sendMessage(loginMessage);
 
 
-            
         }
 
     }
