@@ -98,7 +98,7 @@ public class LoginMenu {
             } catch (Exception e) {
 
             }
-            NetworkedLogin.CLIENT_SEND_LoginMessage loginMessage = new NetworkedLogin.CLIENT_SEND_LoginMessage();
+            NetworkedLogin.CLIENT_SEND.LoginMessage loginMessage = new NetworkedLogin.CLIENT_SEND.LoginMessage();
             loginMessage.username = username;
             loginMessage.password = hashedPassword;
             Networking.clientSide.sendMessage(loginMessage);
