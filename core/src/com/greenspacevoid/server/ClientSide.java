@@ -7,7 +7,7 @@ import com.greenspacevoid.server.shared.network.messages.SharedMessage;
 import java.io.IOException;
 
 public class ClientSide {
-
+    public static ClientSide clientSide;
 
 
     public static final String SERVER_URL = "www.greenspacevoid.com";
@@ -59,7 +59,7 @@ public class ClientSide {
     public void connectToServer() throws IOException {
 
 
-            client.connect(TIMEOUT_IN_MILLIS, SERVER_URL, PORT);//For testing purposes
+            client.connect(TIMEOUT_IN_MILLIS, "localhost", PORT);//For testing purposes
 
 
 

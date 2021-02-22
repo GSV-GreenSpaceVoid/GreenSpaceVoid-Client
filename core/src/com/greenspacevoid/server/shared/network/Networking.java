@@ -2,9 +2,12 @@ package com.greenspacevoid.server.shared.network;
 
 import com.esotericsoftware.kryo.Kryo;
 import com.greenspacevoid.server.ClientSide;
+import com.greenspacevoid.server.shared.network.messages.login.NetworkedLogin;
+
+import java.util.ArrayList;
 
 public class Networking {
-    public static ClientSide clientSide;
+
 
 
 
@@ -25,6 +28,9 @@ public class Networking {
     public static void syncRegisters(Kryo kryo){
 
 
+        kryo.register(ArrayList.class);
+        kryo.register(byte[].class);
+        kryo.register(NetworkedLogin.CLIENT_SEND.LoginMessage.class);
         /*
         kryo.register(ArrayList.class);
         kryo.register(LoginMessage.class);

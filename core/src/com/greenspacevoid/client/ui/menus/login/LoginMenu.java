@@ -25,10 +25,10 @@ public class LoginMenu {
     private JButton newUserRegisterHereButton;
     private JButton joinOurDiscordButton;
 
-    private static final int loginCooldownTimer = 3000; //In Milliseconds
+    private static final long loginCooldownTimer = 3000; //In Milliseconds
 
 
-    int lastTimeSinceLoginAttempt = 0;
+    long lastTimeSinceLoginAttempt = 0;
     //Listeners
 
 
@@ -81,6 +81,7 @@ public class LoginMenu {
 
     public void login() {//Executed when login button is pressed.
         if (System.currentTimeMillis() - loginCooldownTimer > lastTimeSinceLoginAttempt) {
+            lastTimeSinceLoginAttempt = System.currentTimeMillis();
             String username = usernameField.getText();
             String password = new String(passwordField.getPassword());
             byte[] hashedPassword;
@@ -93,15 +94,15 @@ public class LoginMenu {
             }
 
             try {
-                Networking.clientSide = new ClientSide();
-                Networking.clientSide.connectToServer();
+                ClientSide.clientSide = new ClientSide();
+                ClientSide.clientSide.connectToServer();
             } catch (Exception e) {
 
             }
             NetworkedLogin.CLIENT_SEND.LoginMessage loginMessage = new NetworkedLogin.CLIENT_SEND.LoginMessage();
             loginMessage.username = username;
             loginMessage.password = hashedPassword;
-            Networking.clientSide.sendMessage(loginMessage);
+            ClientSide.clientSide.sendMessage(loginMessage);
 
 
         }
