@@ -1,8 +1,8 @@
 package com.greenspacevoid.server;
 
 import com.esotericsoftware.kryonet.Client;
-import com.greenspacevoid.server.shared.network.Networking;
-import com.greenspacevoid.server.shared.network.messages.SharedMessage;
+import com.greenspacevoidsharedAPI.networking.network.Networking;
+import com.greenspacevoidsharedAPI.networking.network.messages.SharedMessage;
 
 import java.io.IOException;
 

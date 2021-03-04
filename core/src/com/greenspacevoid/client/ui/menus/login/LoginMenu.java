@@ -2,8 +2,8 @@ package com.greenspacevoid.client.ui.menus.login;
 
 import com.greenspacevoid.client.misc.URLs;
 import com.greenspacevoid.server.ClientSide;
-import com.greenspacevoid.server.shared.network.Networking;
-import com.greenspacevoid.server.shared.network.messages.login.NetworkedLogin;
+import com.greenspacevoidsharedAPI.networking.network.Networking;
+import com.greenspacevoidsharedAPI.networking.network.messages.login.NetworkedLogin;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.Spacer;
