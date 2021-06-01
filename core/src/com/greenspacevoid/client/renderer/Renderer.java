@@ -1,11 +1,46 @@
 package com.greenspacevoid.client.renderer;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.greenspacevoidsharedAPI.networking.network.messages.gameEntity.VisualEntityMessage;
 
 import java.util.ArrayList;
 
-public class RendererUtil {
+public class Renderer {
     //protected static ArrayList<Entity>
+
+
+
+
+    public static void updateSpritePositions(){
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public static String idGetPath(int id){
 
@@ -17,6 +52,9 @@ public class RendererUtil {
 
 
         switch (id) {
+            case 0:
+
+
             //Asteroids
             case 1:
                 return "smallAsteroid.png";
@@ -36,10 +74,32 @@ public class RendererUtil {
     }
 
 
+    public static void generateActor(VisualEntityMessage message){
 
 
 
 
+
+
+
+    }
+
+
+
+
+
+    public static class RenderData{
+        int ID;
+        int layer;
+
+
+
+
+
+
+
+
+    }
 
 
 

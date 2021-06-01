@@ -5,12 +5,14 @@ import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.greenspacevoid.client.renderer.renderableEntity.RenderedEntity;
+import com.greenspacevoid.client.renderer.renderableEntity.ship.Ships;
 import com.greenspacevoidsharedAPI.networking.network.messages.gameEntity.VisualEntityMessage;
 
 import java.util.ArrayList;
 
 public class GSVClient extends ApplicationAdapter {
-	AssetManager assetManager;
+	public static AssetManager assetManager;
 
 
 
@@ -19,11 +21,12 @@ public class GSVClient extends ApplicationAdapter {
 	Texture img;
 	Texture img2;
 	Sprite s, s2;
+	RenderedEntity e;
 	//Todo: renderer go brrrrt
 	@Override
 	public void create () {
 		assetManager = new AssetManager();
-		loadAssets();
+		AssetWrapper.loadAssets();
 		assetManager.finishLoading();
 
 
@@ -34,6 +37,10 @@ public class GSVClient extends ApplicationAdapter {
 
 		s = new Sprite(img);
 		s2 = new Sprite(img2);
+
+		e = new Ships.TestShip(1234, 50,50,0);
+
+
 	}
 
 	@Override
@@ -61,7 +68,7 @@ public class GSVClient extends ApplicationAdapter {
 		batch.begin();
 		//Gdx.gl.glEnable(GL20.GL_BLEND);
 		//Gdx.gl.glBlendFunc(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
-		s.draw(batch);
+		e.draw(batch);
 		batch.draw(s2, 2, 2);
 
 		//Gdx.gl.glDisable(GL20.GL_BLEND);
@@ -121,43 +128,7 @@ public class GSVClient extends ApplicationAdapter {
 
 
 
-	public void loadAssets(){
-		loadShipAssets();
-		loadWorldAssets();
-		loadParticleAssets();
-		loadMiscAssets();
-	}
 
-	public void loadShipAssets(){
-
-
-
-
-	}
-
-
-	public void loadWorldAssets(){
-
-
-
-
-
-
-	}
-
-
-	public void loadParticleAssets(){
-
-
-
-	}
-
-	public void loadMiscAssets(){
-
-
-
-
-	}
 
 
 
