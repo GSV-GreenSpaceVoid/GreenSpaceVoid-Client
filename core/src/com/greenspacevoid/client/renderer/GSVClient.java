@@ -15,7 +15,6 @@ import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.greenspacevoid.client.renderer.renderableEntity.RenderedEntity;
-import com.greenspacevoid.client.renderer.renderableEntity.ship.Ships;
 import com.greenspacevoidsharedAPI.networking.network.messages.gameEntity.VisualEntityMessage;
 
 import java.util.ArrayList;
@@ -60,7 +59,7 @@ public class GSVClient extends ApplicationAdapter {
 		s = new Sprite(img);
 		s2 = new Sprite(img2);
 
-		renderedEntities.add(new Ships.TestShip(1234, 50,50,0));
+
 
 	}
 
@@ -68,7 +67,7 @@ public class GSVClient extends ApplicationAdapter {
 	public void render () {
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		//renderLayers(); //Renders all objects, in order, on their respective layers.
-		background = new Texture(Gdx.files.internal("stars.png"));
+		//background = new Texture(Gdx.files.internal("stars.png"));
 		stage = new Stage();
 		stage2 = new Stage();
 		foreground = new Group();
