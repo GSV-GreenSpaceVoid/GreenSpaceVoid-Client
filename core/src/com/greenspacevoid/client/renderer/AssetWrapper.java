@@ -7,7 +7,7 @@ public class AssetWrapper {
 
     public static void loadAssets(){
         GSVClient.assetManager.load("badlogic.jpg",Texture.class);
-
+        GSVClient.assetManager.load("EdomTestShip.png",Texture.class);
 
 
 

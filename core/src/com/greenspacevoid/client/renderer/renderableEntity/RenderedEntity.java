@@ -12,10 +12,11 @@ public class RenderedEntity extends Sprite{
         this.ID = ID;
         this.UUID = UUID;
         this.layer = layer;
+        setOriginCenter();
         setPosition(x, y);
         setRotation(dir);
         setScale(scaleX,scaleY);
-        setOriginCenter();
+
 
 
     }

@@ -30,10 +30,7 @@ public class GSVClient extends ApplicationAdapter {
 	Texture img2;
 	Sprite s, s2;
 
-	private Stage stage;
-	private Stage stage2;
-	private Group foreground;
-	private Texture background;
+
 
 	RenderedEntity e;
 	//Todo: renderer go brrrrt
@@ -68,11 +65,6 @@ public class GSVClient extends ApplicationAdapter {
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		//renderLayers(); //Renders all objects, in order, on their respective layers.
 		//background = new Texture(Gdx.files.internal("stars.png"));
-		stage = new Stage();
-		stage2 = new Stage();
-		foreground = new Group();
-		final OrthographicCamera camera = new OrthographicCamera(stage.getWidth(), stage.getHeight());
-		stage.setViewport(new FitViewport(stage.getWidth(), stage.getHeight(), camera));
 
 
 
@@ -121,6 +113,7 @@ public class GSVClient extends ApplicationAdapter {
 	@Override
 	public void resize(int width, int height){
 		viewport.update(width, height);
+		System.out.println(width + "" + height);
 		camera.update();
 
 
@@ -133,6 +126,11 @@ public class GSVClient extends ApplicationAdapter {
 		batch.dispose();
 		img.dispose();
 	}
+
+
+
+
+
 
 
 	public void renderEntities(ArrayList<VisualEntityMessage> visualEntities){

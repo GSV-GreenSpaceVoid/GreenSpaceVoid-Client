@@ -2,6 +2,7 @@ package com.greenspacevoid.client.desktop;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
+import com.greenspacevoid.client.renderer.renderableEntity.vessel.Ships;
 import com.greenspacevoid.client.ui.menus.login.LoginMenu;
 import com.greenspacevoid.client.renderer.GSVClient;
 
@@ -29,10 +30,10 @@ public class DesktopLauncher {
 		try{
 			Thread.sleep(2000);
 			System.out.println("Adding badlogic");
-			//GSVClient.renderedEntities.add(new Vessel.TestShip(1234, 50,50,0));
+			GSVClient.renderedEntities.add(new Ships.Military.Edomite.TestFighter(1,-1920,-1920,0,null));
 			Thread.sleep(4000);
-			System.out.println("Deleting badlogic");
-			GSVClient.renderedEntities.remove(0);
+			//System.out.println("Deleting badlogic");
+			//GSVClient.renderedEntities.remove(0);
 		}catch(Exception ignored){
 
 		}
