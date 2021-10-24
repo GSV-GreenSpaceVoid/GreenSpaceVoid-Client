@@ -27,11 +27,6 @@ public class DesktopLauncher {
 
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 
-<<<<<<< HEAD
-=======
-		JDesktopPane desktopPane = new JDesktopPane();
->>>>>>> 4ab25afaba7dd7f07d9b388bc61e42bb383d0d57
-
 
 
 
