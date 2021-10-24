@@ -1,6 +1,7 @@
 package com.greenspacevoid.client.renderer;
 
 import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.backends.lwjgl.LwjglAWTCanvas;
@@ -86,8 +87,13 @@ public class GSVRenderer extends ApplicationAdapter {
 
 		}
 
+<<<<<<< HEAD:core/src/com/greenspacevoid/client/renderer/GSVRenderer.java
 		s2.draw(batch);
 		//batch.end();
+=======
+		//s2.draw(batch);
+
+>>>>>>> 4ab25afaba7dd7f07d9b388bc61e42bb383d0d57:core/src/com/greenspacevoid/client/renderer/GSVClient.java
 
 
 
@@ -193,7 +199,11 @@ public class GSVRenderer extends ApplicationAdapter {
 			final Container container = getContentPane();
 			container.setLayout(new BorderLayout());
 
+<<<<<<< HEAD:core/src/com/greenspacevoid/client/renderer/GSVRenderer.java
 			LwjglAWTCanvas canvas = new LwjglAWTCanvas(new GSVRenderer(), config);
+=======
+			LwjglAWTCanvas canvas = new LwjglAWTCanvas(new GSVClient(), config);
+>>>>>>> 4ab25afaba7dd7f07d9b388bc61e42bb383d0d57:core/src/com/greenspacevoid/client/renderer/GSVClient.java
 			container.add(canvas.getCanvas(), BorderLayout.CENTER);
 
 			pack();

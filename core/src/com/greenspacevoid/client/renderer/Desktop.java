@@ -12,6 +12,7 @@ public class Desktop extends JFrame {
 
     public Desktop(LwjglApplicationConfiguration config){
 
+<<<<<<< HEAD
         GSVRenderer.GameWindowFrame gameWindowFrame = new GSVRenderer.GameWindowFrame(config);
         //gameWindowFrame.pack();
         gameWindowFrame.setVisible(true);
@@ -20,6 +21,14 @@ public class Desktop extends JFrame {
         desktopPane.add(ShipInfoPanel.generateShipInfoPanel().getFrame());
         desktopPane.add(gameWindowFrame);
         desktopPane.setBackground(new Color(0));
+=======
+        GSVClient.GameWindowFrame gameWindowFrame = new GSVClient.GameWindowFrame(config);
+        //gameWindowFrame.pack();
+        gameWindowFrame.setVisible(true);
+        desktopPane.add(TargetingMenu.createTargetingMenu().getFrame());
+        desktopPane.add(ShipInfoPanel.generateShipInfoPanel().getFrame());
+        desktopPane.add(gameWindowFrame);
+>>>>>>> 4ab25afaba7dd7f07d9b388bc61e42bb383d0d57
         gameWindowFrame.moveToBack();
 
 
