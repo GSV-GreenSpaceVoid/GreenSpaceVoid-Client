@@ -1,8 +1,11 @@
 package com.greenspacevoid.client.renderer;
 
 import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.backends.lwjgl.LwjglAWTCanvas;
+import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -17,6 +20,10 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 import com.greenspacevoid.client.renderer.renderableEntity.RenderedEntity;
 import com.greenspacevoidsharedAPI.networking.network.messages.gameEntity.VisualEntityMessage;
 
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
 public class GSVClient extends ApplicationAdapter {
@@ -30,12 +37,13 @@ public class GSVClient extends ApplicationAdapter {
 	Texture img2;
 	Sprite s, s2;
 
-
+	int x = 0, y = 0;
 
 	RenderedEntity e;
 	//Todo: renderer go brrrrt
 	@Override
 	public void create () {
+
 		assetManager = new AssetManager();
 		AssetWrapper.loadAssets();
 		assetManager.finishLoading();
@@ -66,7 +74,7 @@ public class GSVClient extends ApplicationAdapter {
 		//renderLayers(); //Renders all objects, in order, on their respective layers.
 		//background = new Texture(Gdx.files.internal("stars.png"));
 
-
+		//s2.setPosition((float)Math.sin(x++), (float)Math.cos(y++));
 
 
 		batch.begin();
@@ -82,7 +90,7 @@ public class GSVClient extends ApplicationAdapter {
 
 		}
 
-
+		//s2.draw(batch);
 
 
 
@@ -180,8 +188,62 @@ public class GSVClient extends ApplicationAdapter {
 
 
 
+	public static class GameWindowFrame extends JInternalFrame{
 
 
+
+		public GameWindowFrame(LwjglApplicationConfiguration config){
+			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			final Container container = getContentPane();
+			container.setLayout(new BorderLayout());
+
+			LwjglAWTCanvas canvas = new LwjglAWTCanvas(new GSVClient(), config);
+			container.add(canvas.getCanvas(), BorderLayout.CENTER);
+
+			pack();
+			setVisible(true);
+			setSize(1600, 900);
+			this.setResizable(true);
+
+			this.addMouseListener(new MouseListener() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					GameWindowFrame.super.moveToBack();
+					System.out.println("TRIGERED");
+				}
+
+				@Override
+				public void mousePressed(MouseEvent e) {
+
+				}
+
+				@Override
+				public void mouseReleased(MouseEvent e) {
+
+				}
+
+				@Override
+				public void mouseEntered(MouseEvent e) {
+
+				}
+
+				@Override
+				public void mouseExited(MouseEvent e) {
+
+				}
+			});
+
+
+		}
+
+
+
+
+
+
+
+
+	}
 
 
 

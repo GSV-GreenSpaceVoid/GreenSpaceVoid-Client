@@ -4,13 +4,12 @@ import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 
 import javax.swing.*;
-import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class TargetingMenu {
-    private JFrame frame;
+    private JInternalFrame frame;
     private JPanel targetingPanel;
     private JTable weaponryTable;
     private JTable lockedOnTargetTable;
@@ -62,23 +61,25 @@ public class TargetingMenu {
     }
 
     public static TargetingMenu createTargetingMenu() {
-        JFrame frame = new JFrame("Targeting Menu");
+        JInternalFrame frame = new JInternalFrame("Targeting Menu");
 
         TargetingMenu menu = new TargetingMenu();
         menu.setFrame(frame);
         frame.setContentPane(menu.targetingPanel);
         frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        frame.setClosable(true);
+        frame.setResizable(false);
         frame.pack();
         frame.setVisible(true);
         return menu;
     }
 
 
-    public JFrame getFrame() {
+    public JInternalFrame getFrame() {
         return frame;
     }
 
-    public void setFrame(JFrame frame) {
+    public void setFrame(JInternalFrame frame) {
         this.frame = frame;
     }
 
