@@ -12,12 +12,14 @@ public class Desktop extends JFrame {
 
     public Desktop(LwjglApplicationConfiguration config){
 
-        GSVClient.GameWindowFrame gameWindowFrame = new GSVClient.GameWindowFrame(config);
+        GSVRenderer.GameWindowFrame gameWindowFrame = new GSVRenderer.GameWindowFrame(config);
         //gameWindowFrame.pack();
         gameWindowFrame.setVisible(true);
+        //gameWindowFrame.setBorder(null);
         desktopPane.add(TargetingMenu.createTargetingMenu().getFrame());
         desktopPane.add(ShipInfoPanel.generateShipInfoPanel().getFrame());
         desktopPane.add(gameWindowFrame);
+        desktopPane.setBackground(new Color(0));
         gameWindowFrame.moveToBack();
 
 

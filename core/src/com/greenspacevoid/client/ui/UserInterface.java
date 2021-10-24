@@ -3,7 +3,7 @@ package com.greenspacevoid.client.ui;
 import com.greenspacevoid.client.ui.menus.ui.main.TargetingMenu;
 
 import javax.swing.*;
-
+@Deprecated // Replaced by Desktop class
 public class UserInterface {
     //Todo User interface manager!
     //Todo: Drag n drop

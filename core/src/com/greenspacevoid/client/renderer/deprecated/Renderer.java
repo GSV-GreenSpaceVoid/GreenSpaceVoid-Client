@@ -1,10 +1,8 @@
-package com.greenspacevoid.client.renderer;
+package com.greenspacevoid.client.renderer.deprecated;
 
-import com.badlogic.gdx.graphics.Texture;
 import com.greenspacevoidsharedAPI.networking.network.messages.gameEntity.VisualEntityMessage;
 
-import java.util.ArrayList;
-
+@Deprecated
 public class Renderer {
     //protected static ArrayList<Entity>
 

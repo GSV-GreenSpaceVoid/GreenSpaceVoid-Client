@@ -1,11 +1,10 @@
 package com.greenspacevoid.client.desktop;
 
-import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 import com.greenspacevoid.client.renderer.Desktop;
 import com.greenspacevoid.client.renderer.renderableEntity.vessel.Ships;
 import com.greenspacevoid.client.ui.menus.login.LoginMenu;
-import com.greenspacevoid.client.renderer.GSVClient;
+import com.greenspacevoid.client.renderer.GSVRenderer;
 
 import javax.swing.*;
 
@@ -28,7 +27,6 @@ public class DesktopLauncher {
 
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 
-		JDesktopPane desktopPane = new JDesktopPane();
 
 
 
@@ -54,7 +52,7 @@ public class DesktopLauncher {
 		try{
 			Thread.sleep(2000);
 			System.out.println("Adding badlogic");
-			GSVClient.renderedEntities.add(new Ships.Military.Edomite.TestFighter(1,-1920,-1920,0,null));
+			GSVRenderer.renderedEntities.add(new Ships.Military.Edomite.TestFighter(1,0,0,0,null));
 			Thread.sleep(4000);
 			//System.out.println("Deleting badlogic");
 			//GSVClient.renderedEntities.remove(0);

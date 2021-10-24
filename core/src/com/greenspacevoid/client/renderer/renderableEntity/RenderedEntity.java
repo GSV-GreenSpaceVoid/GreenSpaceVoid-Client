@@ -2,13 +2,13 @@ package com.greenspacevoid.client.renderer.renderableEntity;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.greenspacevoid.client.renderer.GSVClient;
+import com.greenspacevoid.client.renderer.GSVRenderer;
 
 public class RenderedEntity extends Sprite{
     private int ID, UUID;
     private int layer; //From 1-7 1 being the lowest layer, and 7 being the highest.
     public RenderedEntity(String texturePath, int ID,int UUID, float x, float y, int layer, float dir, float scaleX, float scaleY){
-        super(GSVClient.assetManager.get(texturePath, Texture.class));
+        super(GSVRenderer.assetManager.get(texturePath, Texture.class));
         this.ID = ID;
         this.UUID = UUID;
         this.layer = layer;

@@ -1,7 +1,6 @@
 package com.greenspacevoid.client.renderer;
 
 import com.badlogic.gdx.ApplicationAdapter;
-import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.backends.lwjgl.LwjglAWTCanvas;
@@ -12,10 +11,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.scenes.scene2d.Group;
-import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
-import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.greenspacevoid.client.renderer.renderableEntity.RenderedEntity;
 import com.greenspacevoidsharedAPI.networking.network.messages.gameEntity.VisualEntityMessage;
@@ -26,7 +22,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
-public class GSVClient extends ApplicationAdapter {
+public class GSVRenderer extends ApplicationAdapter {
 	public static AssetManager assetManager;
 	public static ArrayList<RenderedEntity> renderedEntities;
 	private Camera camera;
@@ -90,8 +86,8 @@ public class GSVClient extends ApplicationAdapter {
 
 		}
 
-		//s2.draw(batch);
-
+		s2.draw(batch);
+		//batch.end();
 
 
 
@@ -197,7 +193,7 @@ public class GSVClient extends ApplicationAdapter {
 			final Container container = getContentPane();
 			container.setLayout(new BorderLayout());
 
-			LwjglAWTCanvas canvas = new LwjglAWTCanvas(new GSVClient(), config);
+			LwjglAWTCanvas canvas = new LwjglAWTCanvas(new GSVRenderer(), config);
 			container.add(canvas.getCanvas(), BorderLayout.CENTER);
 
 			pack();
