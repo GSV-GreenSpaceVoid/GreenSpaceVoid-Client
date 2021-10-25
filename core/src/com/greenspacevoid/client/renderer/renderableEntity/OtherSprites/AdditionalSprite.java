@@ -1,16 +1,14 @@
 package com.greenspacevoid.client.renderer.renderableEntity.OtherSprites;
 
 import com.badlogic.gdx.graphics.g2d.Batch;
-import com.esotericsoftware.kryo.NotNull;
 import com.greenspacevoid.client.renderer.renderableEntity.RenderedEntity;
-import com.greenspacevoid.client.renderer.renderableEntity.vessel.Vessel;
-
+/*
 public class AdditionalSprite extends RenderedEntity {
     private RenderedEntity parent;
     private float xOffset, yOffset;
 
-    public AdditionalSprite(String texturePath, int ID, int UUID, float xOffset, float yOffset, int layer, float dir, float scaleX, float scaleY) {
-        super(texturePath, ID, UUID, -50000, -50000, layer, dir, scaleX, scaleY);
+    public AdditionalSprite(String texturePath, int ID, String UUID, float xOffset, float yOffset, int layer, float dir, float scaleX, float scaleY) {
+        super(texturePath, ID, -50000, -50000, layer, dir, scaleX, scaleY);
         this.xOffset = xOffset;
         this.yOffset = yOffset;
     }
@@ -53,11 +51,11 @@ public class AdditionalSprite extends RenderedEntity {
         Engine Sprite behavior is determined by parent ship behavior!
 
 
-         */
+
 
 
         private static final int ID = -1;
-        private static final int UUID = 0;
+        private static final String UUID = 0;
         private boolean isMoving;
 
         public EngineSprite(String texturePath, float xOffset, float yOffset, int layer, float dir, float scaleX, float scaleY) {
@@ -95,7 +93,7 @@ public class AdditionalSprite extends RenderedEntity {
     public static class TurretSprite extends AdditionalSprite{
         RenderedEntity target;
 
-        public TurretSprite(String texturePath, int ID, int UUID, float x, float y, int layer, float dir, float scaleX, float scaleY) {
+        public TurretSprite(String texturePath, int ID, String UUID, float x, float y, int layer, float dir, float scaleX, float scaleY) {
             super(texturePath, ID, UUID, x, y, layer, dir, scaleX, scaleY);
         }
 
@@ -133,3 +131,4 @@ public class AdditionalSprite extends RenderedEntity {
 
 
 }
+*/

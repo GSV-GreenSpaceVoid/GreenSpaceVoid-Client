@@ -97,7 +97,7 @@ public class LoginMenu {
             try {
                 ClientSide.clientSide = new ClientSide();
                 ClientSide.clientSide.connectToServer();
-                NetworkedLogin.CLIENT_SEND.LoginMessage loginMessage = new NetworkedLogin.CLIENT_SEND.LoginMessage();
+                NetworkedLogin.CLIENT.CLIENT_SEND_LoginMessage loginMessage = new NetworkedLogin.CLIENT.CLIENT_SEND_LoginMessage();
                 loginMessage.username = username;
                 loginMessage.password = hashedPassword;
                 ClientSide.clientSide.sendMessage(loginMessage);

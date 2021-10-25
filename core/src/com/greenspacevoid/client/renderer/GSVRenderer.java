@@ -25,6 +25,7 @@ import java.util.ArrayList;
 
 public class GSVRenderer extends ApplicationAdapter {
 	public static AssetManager assetManager;
+	public static RenderedEntity PlayerShip;
 	public static ArrayList<RenderedEntity> renderedEntities;
 	private Camera camera;
 	private Viewport viewport;

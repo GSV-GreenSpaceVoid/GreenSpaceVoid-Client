@@ -3,19 +3,21 @@ package com.greenspacevoid.client.renderer.renderableEntity;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.greenspacevoid.client.renderer.GSVRenderer;
+import com.greenspacevoidsharedAPI.networking.renderer.EntityIndex;
+
+import java.util.ArrayList;
 
 public class RenderedEntity extends Sprite{
-    private int ID, UUID;
+    private String entityID;
     private int layer; //From 1-7 1 being the lowest layer, and 7 being the highest.
-    public RenderedEntity(String texturePath, int ID,int UUID, float x, float y, int layer, float dir, float scaleX, float scaleY){
-        super(GSVRenderer.assetManager.get(texturePath, Texture.class));
-        this.ID = ID;
-        this.UUID = UUID;
+    public RenderedEntity(EntityIndex index, String entityID, float x, float y, int layer, float dir, float scaleX, float scaleY){
+        super(GSVRenderer.assetManager.get(getTexturePathFromEntityIndex(index), Texture.class));
+        this.entityID = entityID;
         this.layer = layer;
-        setOriginCenter();
-        setPosition(x, y);
-        setRotation(dir);
-        setScale(scaleX,scaleY);
+        this.setOriginCenter();
+        this.setPosition(x, y);
+        this.setRotation(dir);
+        this.setScale(scaleX,scaleY);
 
 
 
@@ -27,50 +29,41 @@ public class RenderedEntity extends Sprite{
 
 
 
+    public static ArrayList<RenderedEntity> renderedEntitiesFactory(EntityIndex index, String entityID, float x, float y, float dir, int layer){
+        ArrayList<RenderedEntity> renderedEntities = new ArrayList<>();
 
 
 
 
 
-
-
-
-
-    public static Texture convertIDtoTexture(int ID){
-
-        //TODO: IMPLEMENT ASSET MANAGER
-
-        switch (ID) {
-            case 1:
-                return new Texture("badlogic.jpg");
-            case 2:
-                return new Texture("img.png");
-
-
-
-
-
-
+        switch(index) {
+            case GIDEON:
 
 
         }
 
 
 
+
+
+
+
+    }
+
+
+    public static String getTexturePathFromEntityIndex(EntityIndex index){
+
+
+
+
+
+
+
         return null;
 
-    }
-
-
-    public int getUUID(){//Useful for updating/keeping track of already initiated sprites. (Serverside managed)
-        return UUID;
-
-
 
 
     }
-
-
 
 
 }

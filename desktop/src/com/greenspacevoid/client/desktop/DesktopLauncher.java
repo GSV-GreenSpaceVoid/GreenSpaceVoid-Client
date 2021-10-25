@@ -51,7 +51,7 @@ public class DesktopLauncher {
 		try{
 			Thread.sleep(2000);
 			System.out.println("Adding badlogic");
-			GSVRenderer.renderedEntities.add(new Ships.Military.Edomite.TestFighter(1,0,0,0,null));
+			//GSVRenderer.renderedEntities.add(new Ships.Military.Edomite.TestFighter(1,0,0,0,null));
 			Thread.sleep(4000);
 			//System.out.println("Deleting badlogic");
 			//GSVClient.renderedEntities.remove(0);

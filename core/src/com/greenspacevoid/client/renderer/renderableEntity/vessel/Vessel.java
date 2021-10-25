@@ -13,8 +13,8 @@ public class Vessel extends RenderedEntity{
 
 
 
-    public Vessel(String texturePath, int ID, int UUID, float x, float y, int layer, float dir, float scaleX, float scaleY, ArrayList<AdditionalSprite.TurretSprite> turretSprites, ArrayList<AdditionalSprite.EngineSprite> engineSprites) {
-        super(texturePath, ID, UUID, x, y, layer, dir, scaleX, scaleY);
+    public Vessel(String texturePath, int ID, String UUID, float x, float y, int layer, float dir, float scaleX, float scaleY, ArrayList<AdditionalSprite.TurretSprite> turretSprites, ArrayList<AdditionalSprite.EngineSprite> engineSprites) {
+        super(texturePath, ID, x, y, layer, dir, scaleX, scaleY);
 
         for(AdditionalSprite.EngineSprite sprite : engineSprites){
             sprite.setParent(this);

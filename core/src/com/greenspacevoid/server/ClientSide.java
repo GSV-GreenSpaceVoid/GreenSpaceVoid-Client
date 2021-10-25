@@ -1,8 +1,11 @@
 package com.greenspacevoid.server;
 
 import com.esotericsoftware.kryonet.Client;
+import com.esotericsoftware.kryonet.Connection;
+import com.esotericsoftware.kryonet.Listener;
 import com.greenspacevoidsharedAPI.networking.network.Networking;
 import com.greenspacevoidsharedAPI.networking.network.messages.SharedMessage;
+import com.greenspacevoidsharedAPI.networking.network.messages.gameEntity.NetworkedEntity;
 
 import java.io.IOException;
 
@@ -32,7 +35,22 @@ public class ClientSide {
         //I guess listeners can go down here.
 
 
+        client.addListener(new Listener(){
+            @Override
+            public void received(Connection connection, Object object) {
+                if(object instanceof NetworkedEntity.CLIENT_RECEIVE.PlayerShipMessage){
+                    
 
+
+
+                }
+
+
+
+
+
+            }
+        });
 
 
 
