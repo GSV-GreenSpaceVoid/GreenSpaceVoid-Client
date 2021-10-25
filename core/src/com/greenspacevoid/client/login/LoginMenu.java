@@ -1,8 +1,8 @@
-package com.greenspacevoid.client.ui.menus.login;
+package com.greenspacevoid.client.login;
 
+import com.esotericsoftware.kryonet.Client;
 import com.greenspacevoid.client.misc.URLs;
 import com.greenspacevoid.server.ClientSide;
-import com.greenspacevoidsharedAPI.networking.network.Networking;
 import com.greenspacevoidsharedAPI.networking.network.messages.login.NetworkedLogin;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
@@ -29,8 +29,6 @@ public class LoginMenu {
     private JButton joinOurDiscordButton;
 
     private static final long loginCooldownTimer = 3000; //In Milliseconds
-
-
     long lastTimeSinceLoginAttempt = 0;
     //Listeners
 
@@ -99,13 +97,16 @@ public class LoginMenu {
             try {
                 ClientSide.clientSide = new ClientSide();
                 ClientSide.clientSide.connectToServer();
+                NetworkedLogin.CLIENT_SEND.LoginMessage loginMessage = new NetworkedLogin.CLIENT_SEND.LoginMessage();
+                loginMessage.username = username;
+                loginMessage.password = hashedPassword;
+                ClientSide.clientSide.sendMessage(loginMessage);
             } catch (Exception e) {
-
+                System.out.println("Could not connect to server!!!!");
+                e.printStackTrace();
+                ClientSide.clientSide = null;
             }
-            NetworkedLogin.CLIENT_SEND.LoginMessage loginMessage = new NetworkedLogin.CLIENT_SEND.LoginMessage();
-            loginMessage.username = username;
-            loginMessage.password = hashedPassword;
-            ClientSide.clientSide.sendMessage(loginMessage);
+
 
 
         }

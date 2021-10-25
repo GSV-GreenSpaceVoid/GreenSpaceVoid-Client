@@ -1,5 +1,4 @@
 include 'GreenSpaceVoid-SharedAPI'
-include 'GreenSpaceVoid-Shared'
 include 'desktop', 'core'
 include 'network'
 

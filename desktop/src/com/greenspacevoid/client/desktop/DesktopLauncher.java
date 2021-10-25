@@ -3,7 +3,7 @@ package com.greenspacevoid.client.desktop;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 import com.greenspacevoid.client.renderer.Desktop;
 import com.greenspacevoid.client.renderer.renderableEntity.vessel.Ships;
-import com.greenspacevoid.client.ui.menus.login.LoginMenu;
+import com.greenspacevoid.client.login.LoginMenu;
 import com.greenspacevoid.client.renderer.GSVRenderer;
 
 import javax.swing.*;

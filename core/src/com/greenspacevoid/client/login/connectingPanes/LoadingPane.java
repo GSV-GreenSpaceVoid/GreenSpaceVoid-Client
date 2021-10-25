@@ -1,4 +1,4 @@
-package com.greenspacevoid.client.ui.menus.login.connectingPanes;
+package com.greenspacevoid.client.login.connectingPanes;
 
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
@@ -51,6 +51,7 @@ public class LoadingPane {
         LoadingPanel.setVerifyInputWhenFocusTarget(true);
         LoadingPanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Loading Green Space Void...", TitledBorder.LEADING, TitledBorder.DEFAULT_POSITION, this.$$$getFont$$$("Courier New", -1, -1, LoadingPanel.getFont()), new Color(-16711936)));
         ConnectingTextPane = new JTextPane();
+        ConnectingTextPane.setAutoscrolls(false);
         ConnectingTextPane.setBackground(new Color(-16777216));
         ConnectingTextPane.setCaretColor(new Color(-16711936));
         ConnectingTextPane.setEditable(false);
