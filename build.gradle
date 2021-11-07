@@ -42,15 +42,40 @@ allprojects {
 
 }
 
-project(":GreenSpaceVoid-SharedAPI"){
+project(":GreenSpaceVoid-Shared"){
     apply plugin: "java-library"
+    dependencies {
+        compile project(":serversideghostclasses")
 
+    }
 
 
 
 }
 
+project(":serversideghostclasses"){
+    apply plugin: "java-library"
 
+    dependencies {
+
+
+
+    }
+
+
+
+}
+
+project(":UI"){
+    apply plugin: "java-library"
+    dependencies {
+        compile 'com.intellij:forms_rt:7.0.3'
+
+    }
+
+
+
+}
 
 
 
@@ -68,6 +93,7 @@ project(":desktop") {
         api "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-desktop"
         api "com.badlogicgames.gdx:gdx-tools:$gdxVersion"
         compile 'com.esotericsoftware:kryonet:2.22.0-RC1'
+        compile project(":UI")
         //compile project(':GreenSpaceVoid-SharedAPI')
     }
 }
@@ -96,6 +122,8 @@ project(":core") {
         compile 'com.esotericsoftware:kryonet:2.22.0-RC1'
         compile 'com.intellij:forms_rt:7.0.3'
         compile project(':GreenSpaceVoid-SharedAPI')
+        compile project(":UI")
+
     }
 
 
