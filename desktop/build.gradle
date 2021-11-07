@@ -19,7 +19,10 @@ sourceSets.main.java.srcDirs = [ "src/" ]
 sourceSets.main.resources.srcDirs = ["../core/assets"]
 
 project.ext.mainClassName = "com.greenspacevoiddesktop.client.desktop.DesktopLauncher"
-project.ext.assetsDir = new File("../core/assets")
+
+project.ext.assetsDir = new File("../assets/renderer")
+
+
 
 task run(dependsOn: classes, type: JavaExec) {
     main = project.mainClassName
@@ -53,6 +56,7 @@ task dist(type: Jar) {
 dependencies {
     compile project(":UI")
     compile project(":core")
+    compile project(":assets")
 }
 
 

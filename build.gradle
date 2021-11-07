@@ -71,6 +71,10 @@ project(":UI"){
     dependencies {
         compile 'com.intellij:forms_rt:7.0.3'
 
+        compile project(":core")
+        api "com.badlogicgames.gdx:gdx:$gdxVersion"
+        api "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
+        implementation 'com.badlogicgames.gdx:gdx-backend-lwjgl:1.9.14'
     }
 
 
@@ -122,7 +126,7 @@ project(":core") {
         compile 'com.esotericsoftware:kryonet:2.22.0-RC1'
         compile 'com.intellij:forms_rt:7.0.3'
         compile project(':GreenSpaceVoid-SharedAPI')
-        compile project(":UI")
+        compile project(':assets')
 
     }
 
@@ -131,4 +135,17 @@ project(":core") {
 
 }
 
+
+project(":assets") {
+    apply plugin: "java-library"
+
+
+    dependencies {
+
+    }
+
+
+
+
+}
 

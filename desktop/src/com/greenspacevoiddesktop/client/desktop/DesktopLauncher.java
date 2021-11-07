@@ -1,9 +1,9 @@
 package com.greenspacevoiddesktop.client.desktop;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
-import com.greenspacevoidclientcore.client.renderer.Desktop;
+import com.greenspacevoidUI.Desktop;
 import com.greenspacevoidclientcore.client.renderer.renderableEntity.RenderedEntity;
-import com.greenspacevoidclientcore.client.login.LoginMenu;
+import com.greenspacevoidUI.menus.login.LoginMenu;
 import javax.swing.*;
 
 

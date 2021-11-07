@@ -1,2 +1,4 @@
 com/greenspacevoidnode/common/core/entity/vessel/ship/Ship.java
  com.greenspacevoidnode.common.core.entity.vessel.ship.Ship
+module-info.java
+ module-info
