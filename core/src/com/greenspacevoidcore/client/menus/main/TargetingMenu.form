@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.greenspacevoidcore.client.menus.main.TargetingMenu">
+  <grid id="27dc6" binding="targetingPanel" layout-manager="GridLayoutManager" row-count="17" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="458" height="889"/>
+    </constraints>
+    <properties>
+      <preferredSize width="500" height="730"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <component id="54c54" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="134" height="19"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="Offensive/Harvesting Devices:"/>
+        </properties>
+      </component>
+      <component id="e777f" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="102" height="19"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="Locked-On Targets:"/>
+        </properties>
+      </component>
+      <component id="56202" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="7" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="97" height="22"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="Targeting Utilities:"/>
+        </properties>
+      </component>
+      <component id="3f44c" class="javax.swing.JButton" binding="lockOnToNearestAsteroidButton">
+        <constraints>
+          <grid row="8" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Lock-On to Nearest Asteroid"/>
+        </properties>
+      </component>
+      <component id="e8abf" class="javax.swing.JButton" binding="lockOnToNearestVesselButton">
+        <constraints>
+          <grid row="9" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Lock-On to Nearest Vessel"/>
+        </properties>
+      </component>
+      <component id="f7408" class="javax.swing.JButton" binding="toggleModuleOverdriveForButton" default-binding="true">
+        <constraints>
+          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="134" height="30"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="Toggle Module Overdrive For All Weapons"/>
+        </properties>
+      </component>
+      <component id="3268f" class="javax.swing.JButton" binding="ceaseAllWeaponsFireButton" default-binding="true">
+        <constraints>
+          <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="134" height="30"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="Cease All Weapons Fire"/>
+        </properties>
+      </component>
+      <component id="6e522" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="134" height="22"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="Offensive/Harvesting Device Management:"/>
+        </properties>
+      </component>
+      <component id="cb23b" class="javax.swing.JButton" binding="openDroneMenuButton" default-binding="true">
+        <constraints>
+          <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="134" height="29"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="Open Drone Menu"/>
+        </properties>
+      </component>
+      <component id="e95d0" class="javax.swing.JButton" binding="volleyClosestTargetButton" default-binding="true">
+        <constraints>
+          <grid row="10" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="145" height="29"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="Volley Closest Target"/>
+        </properties>
+      </component>
+      <component id="4446b" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="11" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Target Health Status:"/>
+        </properties>
+      </component>
+      <component id="e32eb" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="134" height="16"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="Ship Functions / Specialties:"/>
+        </properties>
+      </component>
+      <component id="136ae" class="javax.swing.JButton" binding="viewCargoHoldButton" default-binding="true">
+        <constraints>
+          <grid row="12" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="134" height="30"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="View Cargo Hold"/>
+        </properties>
+      </component>
+      <component id="ff346" class="javax.swing.JButton" binding="shipScannersSurveyButton" default-binding="true">
+        <constraints>
+          <grid row="13" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="134" height="30"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="Ship Scanners / Survey"/>
+        </properties>
+      </component>
+      <component id="6dfcb" class="javax.swing.JButton" binding="mobileIndustryAndManufacturingButton" default-binding="true">
+        <constraints>
+          <grid row="14" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="134" height="30"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="Mobile Industry And Manufacturing"/>
+        </properties>
+      </component>
+      <component id="aef21" class="javax.swing.JButton" binding="carrierMenuButton" default-binding="true">
+        <constraints>
+          <grid row="15" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="134" height="30"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="Carrier Menu"/>
+        </properties>
+      </component>
+      <component id="cdb73" class="javax.swing.JButton" binding="doomsdayDeviceMenuButton" default-binding="true">
+        <constraints>
+          <grid row="16" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="134" height="30"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="Doomsday Device(s) Menu"/>
+        </properties>
+      </component>
+      <component id="1283" class="javax.swing.JProgressBar" binding="targetShieldBar">
+        <constraints>
+          <grid row="12" column="1" row-span="5" col-span="1" vsize-policy="0" hsize-policy="7" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <autoscrolls value="false"/>
+          <indeterminate value="true"/>
+          <orientation value="1"/>
+          <string value="Shields: 0%"/>
+          <stringPainted value="true"/>
+        </properties>
+      </component>
+      <component id="d951b" class="javax.swing.JProgressBar" binding="targetHullBar">
+        <constraints>
+          <grid row="12" column="2" row-span="5" col-span="1" vsize-policy="0" hsize-policy="7" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <indeterminate value="true"/>
+          <orientation value="1"/>
+          <string value="Hull: 0%"/>
+          <stringPainted value="true"/>
+        </properties>
+      </component>
+      <component id="b9d38" class="javax.swing.JProgressBar" binding="targetStructureBar">
+        <constraints>
+          <grid row="12" column="3" row-span="5" col-span="1" vsize-policy="0" hsize-policy="7" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <indeterminate value="true"/>
+          <orientation value="1"/>
+          <string value="Structure: 0%"/>
+          <stringPainted value="true"/>
+        </properties>
+      </component>
+      <tabbedpane id="64143" binding="availableTargetsTabbedPane">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="4" vsize-policy="3" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="200" height="200"/>
+          </grid>
+        </constraints>
+        <properties>
+          <tabPlacement value="1"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <scrollpane id="89e07" binding="shipsScrollPane">
+            <constraints>
+              <tabbedpane title="Ships"/>
+            </constraints>
+            <properties>
+              <verticalScrollBarPolicy value="22"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="687db" class="javax.swing.JTable" binding="shipTargetTable">
+                <constraints/>
+                <properties/>
+              </component>
+            </children>
+          </scrollpane>
+          <scrollpane id="c352c" binding="navigationTargetsScrollpane">
+            <constraints>
+              <tabbedpane title="Navigation"/>
+            </constraints>
+            <properties>
+              <verticalScrollBarPolicy value="22"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="77991" class="javax.swing.JTable" binding="navigationTargetTable">
+                <constraints/>
+                <properties/>
+              </component>
+            </children>
+          </scrollpane>
+          <scrollpane id="3df21" binding="miningTargetScrollpane">
+            <constraints>
+              <tabbedpane title="Mining"/>
+            </constraints>
+            <properties>
+              <verticalScrollBarPolicy value="22"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="4b908" class="javax.swing.JTable" binding="miningTargetTable">
+                <constraints/>
+                <properties/>
+              </component>
+            </children>
+          </scrollpane>
+          <scrollpane id="9fab5" binding="stationTargetScrollpane">
+            <constraints>
+              <tabbedpane title="Stations"/>
+            </constraints>
+            <properties>
+              <verticalScrollBarPolicy value="22"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="e13a0" class="javax.swing.JTable" binding="stationTargetTable">
+                <constraints/>
+                <properties/>
+              </component>
+            </children>
+          </scrollpane>
+          <scrollpane id="3e7c1" binding="allTargetsScrollPane">
+            <constraints>
+              <tabbedpane title="All"/>
+            </constraints>
+            <properties>
+              <verticalScrollBarPolicy value="22"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="18521" class="javax.swing.JTable" binding="allTargetsTable">
+                <constraints/>
+                <properties/>
+              </component>
+            </children>
+          </scrollpane>
+        </children>
+      </tabbedpane>
+      <scrollpane id="b4b3f" binding="weaponryScrollpane">
+        <constraints>
+          <grid row="2" column="0" row-span="4" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="82852" class="javax.swing.JTable" binding="weaponryTable">
+            <constraints/>
+            <properties/>
+          </component>
+        </children>
+      </scrollpane>
+      <scrollpane id="8b718" binding="lockedOnTargetsScrollpane">
+        <constraints>
+          <grid row="2" column="1" row-span="4" col-span="3" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="37382" class="javax.swing.JTable" binding="lockedOnTargetTable">
+            <constraints/>
+            <properties/>
+          </component>
+        </children>
+      </scrollpane>
+      <component id="e836a" class="javax.swing.JTextArea" binding="shipInfoTextArea">
+        <constraints>
+          <grid row="6" column="0" row-span="1" col-span="4" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+        </constraints>
+        <properties>
+          <editable value="false"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>

@@ -1,4 +1,4 @@
 include 'GreenSpaceVoid-SharedAPI'
-include 'desktop', 'core','UI','serversideghostclasses'
+include 'desktop', 'core','serversideghostclasses'
 include 'GreenSpaceVoid-Shared', 'assets'
 

@@ -54,7 +54,7 @@ task dist(type: Jar) {
 
 
 dependencies {
-    compile project(":UI")
+
     compile project(":core")
     compile project(":assets")
 }
