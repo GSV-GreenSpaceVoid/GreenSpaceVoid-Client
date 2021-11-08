@@ -6,6 +6,7 @@ import com.esotericsoftware.kryonet.Listener;
 import com.greenspacevoidsharedAPI.networking.network.Networking;
 import com.greenspacevoidsharedAPI.networking.network.messages.SharedMessage;
 import com.greenspacevoidsharedAPI.networking.network.messages.gameEntity.NetworkedEntity;
+import com.greenspacevoidsharedAPI.networking.network.messages.login.NetworkedLogin;
 
 import java.io.IOException;
 
@@ -43,6 +44,13 @@ public class ClientSide {
 
 
 
+                }else if(object instanceof NetworkedLogin.CLIENT.CLIENT_RECEIVE_LoginStatusMessage){
+                    if(((NetworkedLogin.CLIENT.CLIENT_RECEIVE_LoginStatusMessage) object).loginAccepted){
+                        System.out.println("WE ARE LOGGED IN!");
+                    }else{
+                        ClientSide.clientSide.client.close();
+                        ClientSide.clientSide.client = null;
+                    }
                 }
 
 

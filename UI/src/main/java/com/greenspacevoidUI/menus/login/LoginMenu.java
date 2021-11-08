@@ -14,6 +14,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.URI;
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.util.Locale;
 import com.greenspacevoidUI.menus.misc.URLs;
@@ -89,6 +90,7 @@ public class LoginMenu {
             try {
                 MessageDigest hasher = MessageDigest.getInstance("SHA-512");
                 hashedPassword = hasher.digest(password.getBytes());
+                System.out.println(new String(hashedPassword));
             } catch (Exception ignored) {
                 System.out.println("Login Credentials Didn't Hash Correctly");
                 return;
@@ -99,7 +101,7 @@ public class LoginMenu {
                 ClientSide.clientSide.connectToServer();
                 NetworkedLogin.CLIENT.CLIENT_SEND_LoginMessage loginMessage = new NetworkedLogin.CLIENT.CLIENT_SEND_LoginMessage();
                 loginMessage.username = username;
-                loginMessage.password = hashedPassword;
+                loginMessage.password = password.getBytes(StandardCharsets.UTF_8);
                 ClientSide.clientSide.sendMessage(loginMessage);
             } catch (Exception e) {
                 System.out.println("Could not connect to server!!!!");
